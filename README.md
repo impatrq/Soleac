@@ -7,4 +7,4 @@
     soleac.impa
 soleacgmail</details>
 
-El proyecto se basa en un instrumento detectar de fugas de gas
+El proyecto se basa en un instrumento detectar de fugas de gas y aire comprimido.
