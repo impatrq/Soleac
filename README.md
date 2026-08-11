@@ -12,7 +12,7 @@
 <li><b>Carpeta de campo</b>/Progreso y documentacion </li>
 <li><b>Firmware</b>/Codigos implementados a los microcontroladores</li>
 <li><b>Hardware</b>/Esquematicos y PCBs </li>
-<li><b>Diseño 3D</b>/Diseños fisicos de herraminetas</li>
+<li><b>Diseño 3D</b>/Diseños fisicos de herramientas</li>
 <hr>
 <body>
   <h3><strong>Componentes principales del proyecto</strong></h3>
