@@ -1,5 +1,0 @@
-<!-- Pegar dentro de ios/Runner/Info.plist, dentro de <dict>. -->
-<key>NSBluetoothAlwaysUsageDescription</key>
-<string>SOLEAC usa Bluetooth para recibir la telemetria del detector.</string>
-<key>NSBluetoothPeripheralUsageDescription</key>
-<string>SOLEAC usa Bluetooth para recibir la telemetria del detector.</string>
