@@ -58,7 +58,10 @@
   <li>sensor de gas MQ2</li></em>
 </body>
 <hr>
-
+<body>
+    <h2><strong>Integrantes</strong></h2>
+<img src="assets/integrantes soleac.png" width="750" />
+<hr>
 <body>
   <h3><strong>Contacto</strong></h3></body>
 <img alt="Static Badge" src="https://img.shields.io/badge/instagram-soleac.impa-8A2BE2">
