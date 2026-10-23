@@ -1,0 +1,1694 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SOLEAC · Detector Acústico Ultrasónico de Fugas</title>
+  
+  <!-- Tipografía humanista y de estudio -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  
+  <style>
+    /* ==========================================================================
+       VARIABLES DE COLOR Y DISEÑO (Inspiración Wix Studio / Hardware Studio)
+       Paleta equilibrada: Grafito mate, Cian/Turquesa eléctrico, Coral de seguridad
+       ========================================================================== */
+    :root {
+      --bg-main: #0a0f16;
+      --bg-surface: #111823;
+      --bg-surface-elevated: #182332;
+      --bg-card: rgba(17, 24, 35, 0.75);
+      --bg-card-hover: rgba(24, 35, 50, 0.9);
+      
+      --teal: #00e5c8;
+      --teal-soft: rgba(0, 229, 200, 0.12);
+      --teal-border: rgba(0, 229, 200, 0.28);
+      
+      --blue: #2575fc;
+      --blue-soft: rgba(37, 117, 252, 0.12);
+      
+      --coral: #ff5733;
+      --coral-soft: rgba(255, 87, 51, 0.12);
+      
+      --text-title: #f8fafc;
+      --text-body: #94a3b8;
+      --text-muted: #64748b;
+      
+      --border-subtle: rgba(255, 255, 255, 0.08);
+      --border-strong: rgba(255, 255, 255, 0.16);
+      
+      --radius-sm: 8px;
+      --radius-md: 14px;
+      --radius-lg: 22px;
+      --radius-full: 9999px;
+      
+      --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+      --font-display: 'Space Grotesk', system-ui, sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bg-main);
+      color: var(--text-body);
+      font-family: var(--font-sans);
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+      background-image: 
+        radial-gradient(ellipse 70% 40% at 50% -10%, rgba(0, 229, 200, 0.09), transparent 60%),
+        radial-gradient(circle at 90% 40%, rgba(37, 117, 252, 0.06), transparent 50%);
+    }
+
+    /* Tipografía */
+    h1, h2, h3, h4 {
+      color: var(--text-title);
+      font-family: var(--font-display);
+      font-weight: 700;
+      line-height: 1.15;
+    }
+
+    .mono {
+      font-family: var(--font-mono);
+    }
+
+    /* Contenedor central */
+    .container {
+      width: min(1200px, calc(100% - 40px));
+      margin-inline: auto;
+    }
+
+    /* ==========================================================================
+       HEADER & NAVEGACIÓN
+       ========================================================================== */
+    .header-nav {
+      position: fixed;
+      top: 18px;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      pointer-events: none;
+    }
+
+    .nav-pill {
+      pointer-events: auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 18px;
+      background: rgba(10, 15, 22, 0.82);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-full);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+      transition: all 0.3s ease;
+    }
+
+    .brand-group {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+    }
+
+    .brand-mark {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: var(--bg-surface-elevated);
+      border: 1px solid var(--teal-border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--teal);
+    }
+
+    .brand-name {
+      font-family: var(--font-display);
+      font-size: 1.15rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      color: var(--text-title);
+    }
+
+    .brand-name span {
+      color: var(--teal);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 26px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--text-body);
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 500;
+      transition: color 0.2s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--teal);
+    }
+
+    .btn-action {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 16px;
+      background: var(--teal-soft);
+      border: 1px solid var(--teal-border);
+      color: var(--teal);
+      border-radius: var(--radius-full);
+      font-size: 0.8rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.25s ease;
+    }
+
+    .btn-action:hover {
+      background: var(--teal);
+      color: #04090f;
+      box-shadow: 0 4px 18px rgba(0, 229, 200, 0.3);
+      transform: translateY(-1px);
+    }
+
+    .hamburger-btn {
+      display: none;
+      background: none;
+      border: none;
+      color: var(--text-title);
+      cursor: pointer;
+      padding: 6px;
+    }
+
+    /* Menú móvil desplegable */
+    .mobile-menu {
+      display: none;
+      margin-top: 12px;
+      background: var(--bg-surface);
+      border: 1px solid var(--border-strong);
+      border-radius: var(--radius-lg);
+      padding: 20px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .mobile-menu.open {
+      display: flex;
+    }
+
+    .mobile-menu a {
+      color: var(--text-title);
+      text-decoration: none;
+      font-size: 0.95rem;
+      padding: 8px 0;
+      border-bottom: 1px solid var(--border-subtle);
+    }
+
+    /* ==========================================================================
+       HERO SECTION: NARRATIVO Y DE ALTO IMPACTO
+       ========================================================================== */
+    .hero-section {
+      padding-top: 140px;
+      padding-bottom: 70px;
+      position: relative;
+    }
+
+    .tag-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 14px;
+      background: var(--bg-surface);
+      border: 1px solid var(--border-strong);
+      border-radius: var(--radius-full);
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      color: var(--teal);
+      margin-bottom: 24px;
+      letter-spacing: 0.05em;
+    }
+
+    .tag-pulse {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--teal);
+      box-shadow: 0 0 10px var(--teal);
+    }
+
+    .hero-heading {
+      font-size: clamp(2.6rem, 5.5vw, 4.8rem);
+      letter-spacing: -0.03em;
+      max-width: 900px;
+      margin-bottom: 22px;
+    }
+
+    .hero-heading em {
+      font-style: normal;
+      color: var(--teal);
+      border-bottom: 2px dashed rgba(0, 229, 200, 0.4);
+    }
+
+    .hero-subtext {
+      font-size: clamp(1.05rem, 1.6vw, 1.25rem);
+      color: var(--text-body);
+      max-width: 680px;
+      margin-bottom: 34px;
+      font-weight: 400;
+    }
+
+    .hero-button-group {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-bottom: 50px;
+    }
+
+    .btn-solid {
+      background: var(--teal);
+      color: #050d14;
+      font-weight: 700;
+      padding: 14px 28px;
+      border-radius: var(--radius-md);
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.25s ease;
+      font-size: 0.95rem;
+    }
+
+    .btn-solid:hover {
+      background: #ffffff;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(0, 229, 200, 0.25);
+    }
+
+    .btn-outline {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-strong);
+      color: var(--text-title);
+      font-weight: 600;
+      padding: 14px 26px;
+      border-radius: var(--radius-md);
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.25s ease;
+      font-size: 0.95rem;
+    }
+
+    .btn-outline:hover {
+      border-color: var(--teal);
+      color: var(--teal);
+    }
+
+    /* Banner visual del dispositivo (Lookbook editorial) */
+    .hero-device-card {
+      background: linear-gradient(180deg, #111a26 0%, #0c131c 100%);
+      border: 1px solid var(--border-strong);
+      border-radius: var(--radius-lg);
+      padding: 36px;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.45);
+    }
+
+    .device-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 36px;
+      align-items: center;
+    }
+
+    .interactive-scope-box {
+      background: #06090f;
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      padding: 20px;
+      position: relative;
+    }
+
+    .scope-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 12px;
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      color: var(--text-muted);
+    }
+
+    .scope-canvas {
+      width: 100%;
+      height: 180px;
+      display: block;
+      border-radius: var(--radius-sm);
+      background: #04060a;
+    }
+
+    .device-meta-list {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .meta-item {
+      background: rgba(255, 255, 255, 0.025);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-sm);
+      padding: 14px;
+    }
+
+    .meta-label {
+      font-size: 0.72rem;
+      color: var(--text-muted);
+      font-family: var(--font-mono);
+      text-transform: uppercase;
+      margin-bottom: 4px;
+    }
+
+    .meta-value {
+      font-family: var(--font-display);
+      font-size: 1.35rem;
+      color: var(--text-title);
+      font-weight: 700;
+    }
+
+    .meta-value span {
+      font-size: 0.8rem;
+      color: var(--teal);
+      font-family: var(--font-mono);
+      font-weight: 400;
+    }
+
+    /* ==========================================================================
+       SECCIÓN: EL PROBLEMA REAL (STORYTELLING HUMANO)
+       ========================================================================== */
+    .section-spacing {
+      padding: 90px 0;
+    }
+
+    .section-intro {
+      max-width: 650px;
+      margin-bottom: 44px;
+    }
+
+    .section-kicker {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      color: var(--teal);
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      margin-bottom: 10px;
+      display: block;
+    }
+
+    .section-title {
+      font-size: clamp(2rem, 3.4vw, 2.8rem);
+      letter-spacing: -0.02em;
+      margin-bottom: 14px;
+    }
+
+    .problem-cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .story-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      padding: 28px;
+      transition: all 0.3s ease;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .story-card:hover {
+      background: var(--bg-card-hover);
+      border-color: var(--border-strong);
+      transform: translateY(-3px);
+    }
+
+    .story-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.3rem;
+      margin-bottom: 18px;
+      background: var(--bg-surface-elevated);
+      border: 1px solid var(--border-subtle);
+    }
+
+    .story-card h3 {
+      font-size: 1.25rem;
+      margin-bottom: 10px;
+    }
+
+    .story-card p {
+      font-size: 0.92rem;
+      color: var(--text-body);
+      line-height: 1.6;
+    }
+
+    /* ==========================================================================
+       WIDGET INTERACTIVO: SINTONIZADOR DE ESPECTRO (Sensación de laboratorio)
+       ========================================================================== */
+    .tuner-container {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-strong);
+      border-radius: var(--radius-lg);
+      padding: 34px;
+      margin-top: 40px;
+    }
+
+    .tuner-layout {
+      display: grid;
+      grid-template-columns: 320px 1fr;
+      gap: 32px;
+      align-items: center;
+    }
+
+    .tuner-controls {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+
+    .slider-group {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .slider-label {
+      display: flex;
+      justify-content: space-between;
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+    }
+
+    .freq-slider {
+      -webkit-appearance: none;
+      width: 100%;
+      height: 6px;
+      border-radius: 4px;
+      background: #1c2b3d;
+      outline: none;
+      cursor: pointer;
+    }
+
+    .freq-slider::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: var(--teal);
+      border: 3px solid #0a0f16;
+      box-shadow: 0 0 10px var(--teal);
+      cursor: pointer;
+      transition: transform 0.1s;
+    }
+
+    .freq-slider::-webkit-slider-thumb:hover {
+      transform: scale(1.2);
+    }
+
+    .status-callout {
+      padding: 14px 16px;
+      border-radius: var(--radius-sm);
+      background: rgba(0, 0, 0, 0.35);
+      border-left: 3px solid var(--teal);
+      font-size: 0.85rem;
+    }
+
+    .status-callout strong {
+      color: var(--text-title);
+      display: block;
+      margin-bottom: 2px;
+      font-family: var(--font-display);
+    }
+
+    /* ==========================================================================
+       CÓMO FUNCIONA: 4 PASOS LIMPIOS Y ELEGANTES
+       ========================================================================== */
+    .steps-row {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+      margin-top: 40px;
+    }
+
+    .step-box {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      padding: 24px;
+      position: relative;
+    }
+
+    .step-number {
+      font-family: var(--font-mono);
+      font-size: 0.85rem;
+      color: var(--teal);
+      margin-bottom: 14px;
+      display: inline-block;
+      padding: 2px 8px;
+      background: var(--teal-soft);
+      border-radius: 4px;
+    }
+
+    .step-box h4 {
+      font-size: 1.15rem;
+      margin-bottom: 8px;
+    }
+
+    .step-box p {
+      font-size: 0.88rem;
+      color: var(--text-body);
+      line-height: 1.55;
+    }
+
+    /* ==========================================================================
+       DESPIECE TÉCNICO INTERACTIVO (Hardware Explorer)
+       ========================================================================== */
+    .hardware-tabs {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-bottom: 24px;
+    }
+
+    .hw-tab-btn {
+      padding: 10px 18px;
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      color: var(--text-body);
+      font-family: var(--font-sans);
+      font-size: 0.85rem;
+      font-weight: 500;
+      border-radius: var(--radius-sm);
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .hw-tab-btn.active, .hw-tab-btn:hover {
+      background: var(--bg-surface-elevated);
+      color: var(--teal);
+      border-color: var(--teal-border);
+    }
+
+    .hw-detail-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-strong);
+      border-radius: var(--radius-lg);
+      padding: 36px;
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 36px;
+      align-items: center;
+    }
+
+    .hw-detail-text h3 {
+      font-size: 1.7rem;
+      margin-bottom: 12px;
+    }
+
+    .hw-detail-text p {
+      font-size: 0.95rem;
+      color: var(--text-body);
+      margin-bottom: 20px;
+    }
+
+    .spec-badges {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .spec-pill {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid var(--border-subtle);
+      padding: 4px 12px;
+      border-radius: var(--radius-full);
+      color: var(--teal);
+    }
+
+    .hw-detail-box {
+      background: #070b10;
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      padding: 24px;
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+    }
+
+    .hw-detail-box table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    .hw-detail-box td {
+      padding: 8px 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .hw-detail-box td:first-child {
+      color: var(--text-muted);
+    }
+
+    .hw-detail-box td:last-child {
+      text-align: right;
+      color: var(--text-title);
+      font-weight: 500;
+    }
+
+    /* ==========================================================================
+       APP MÓVIL & TELEMETRÍA (Presentación Real)
+       ========================================================================== */
+    .app-feature-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 380px;
+      gap: 50px;
+      align-items: center;
+      margin-top: 30px;
+    }
+
+    .phone-frame-realistic {
+      background: #111822;
+      border: 2px solid #233245;
+      border-radius: 38px;
+      padding: 12px;
+      box-shadow: 0 30px 70px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(0, 229, 200, 0.15);
+      position: relative;
+    }
+
+    .phone-screen-inner {
+      border-radius: 28px;
+      overflow: hidden;
+      background: #060b10;
+      position: relative;
+    }
+
+    .phone-screen-inner img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .app-benefits-list {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .benefit-item {
+      display: flex;
+      gap: 16px;
+    }
+
+    .benefit-bullet {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: var(--teal-soft);
+      border: 1px solid var(--teal-border);
+      color: var(--teal);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 0.8rem;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .benefit-content h4 {
+      font-size: 1.1rem;
+      margin-bottom: 4px;
+    }
+
+    .benefit-content p {
+      font-size: 0.9rem;
+      color: var(--text-body);
+    }
+
+    /* ==========================================================================
+       TABLA COMPARATIVA REALISTA
+       ========================================================================== */
+    .comparison-section {
+      margin-top: 40px;
+      overflow-x: auto;
+    }
+
+    .studio-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.92rem;
+      text-align: left;
+    }
+
+    .studio-table th, .studio-table td {
+      padding: 18px 20px;
+      border-bottom: 1px solid var(--border-subtle);
+    }
+
+    .studio-table th {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+
+    .highlight-column {
+      background: rgba(0, 229, 200, 0.04);
+      color: var(--teal);
+      font-weight: 600;
+      border-left: 1px solid var(--teal-border);
+      border-right: 1px solid var(--teal-border);
+    }
+
+    /* ==========================================================================
+       FAQ ACORDEÓN
+       ========================================================================== */
+    .faq-list {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      max-width: 840px;
+      margin: 30px auto 0;
+    }
+
+    .faq-item {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      transition: border-color 0.2s;
+    }
+
+    .faq-item:hover {
+      border-color: var(--border-strong);
+    }
+
+    .faq-trigger {
+      width: 100%;
+      padding: 18px 22px;
+      background: none;
+      border: none;
+      text-align: left;
+      font-family: var(--font-display);
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--text-title);
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .faq-symbol {
+      color: var(--teal);
+      font-size: 1.2rem;
+      transition: transform 0.25s ease;
+    }
+
+    .faq-item.active .faq-symbol {
+      transform: rotate(45deg);
+    }
+
+    .faq-content {
+      padding: 0 22px 18px;
+      font-size: 0.92rem;
+      color: var(--text-body);
+      display: none;
+      line-height: 1.6;
+    }
+
+    .faq-item.active .faq-content {
+      display: block;
+    }
+
+    /* ==========================================================================
+       FOOTER
+       ========================================================================== */
+    .site-footer {
+      background: #060a0f;
+      border-top: 1px solid var(--border-subtle);
+      padding: 60px 0 30px;
+      margin-top: 80px;
+    }
+
+    .footer-top-grid {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr;
+      gap: 40px;
+      margin-bottom: 40px;
+    }
+
+    .footer-column h5 {
+      font-size: 0.95rem;
+      margin-bottom: 16px;
+      color: var(--text-title);
+    }
+
+    .footer-column ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .footer-column a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.85rem;
+      transition: color 0.2s;
+    }
+
+    .footer-column a:hover {
+      color: var(--teal);
+    }
+
+    .footer-baseline {
+      border-top: 1px solid var(--border-subtle);
+      padding-top: 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    /* ==========================================================================
+       ADAPTACIONES RESPONSIVAS
+       ========================================================================== */
+    @media (max-width: 960px) {
+      .device-grid { grid-template-columns: 1fr; }
+      .tuner-layout { grid-template-columns: 1fr; }
+      .hw-detail-card { grid-template-columns: 1fr; }
+      .app-feature-grid { grid-template-columns: 1fr; }
+      .phone-frame-realistic { max-width: 340px; margin-inline: auto; }
+      .problem-cards { grid-template-columns: 1fr; }
+      .steps-row { grid-template-columns: 1fr 1fr; }
+      .footer-top-grid { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 720px) {
+      .nav-links, .nav-action-btn { display: none; }
+      .hamburger-btn { display: block; }
+      .hero-heading { font-size: 2.3rem; }
+      .steps-row { grid-template-columns: 1fr; }
+      .device-meta-list { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVEGACIÓN SUPERIOR ESTILO WIX STUDIO -->
+  <header class="header-nav">
+    <div class="container">
+      <div class="nav-pill">
+        <a href="#" class="brand-group">
+          <div class="brand-mark">
+            <!-- Icono acústico minimalista -->
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round">
+              <path d="M2 12h2M6 8v8M10 4v16M14 7v10M18 10v4M22 12h-2"/>
+            </svg>
+          </div>
+          <div class="brand-name">SOLEAC<span>.</span></div>
+        </a>
+
+        <nav class="nav-links">
+          <a href="#historia">El Problema</a>
+          <a href="#como-funciona">Cómo Funciona</a>
+          <a href="#simulador">Sintonizador</a>
+          <a href="#hardware">Componentes</a>
+          <a href="#app">App Móvil</a>
+          <a href="#faq">Preguntas</a>
+        </nav>
+
+        <a href="#simulador" class="btn-action nav-action-btn">
+          <span>Probar Sintonizador</span>
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+
+        <button class="hamburger-btn" id="menuBtn" aria-label="Menú">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        </button>
+      </div>
+
+      <!-- Menú móvil -->
+      <div class="mobile-menu" id="mobileNav">
+        <a href="#historia" onclick="closeMobile()">El Problema Silencioso</a>
+        <a href="#como-funciona" onclick="closeMobile()">Cómo Funciona el Equipo</a>
+        <a href="#simulador" onclick="closeMobile()">Sintonizador Acústico</a>
+        <a href="#hardware" onclick="closeMobile()">Hardware y Módulos</a>
+        <a href="#app" onclick="closeMobile()">Aplicación Bluetooth</a>
+        <a href="#faq" onclick="closeMobile()">Preguntas Frecuentes</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- SECCIÓN HERO -->
+  <section class="hero-section">
+    <div class="container">
+      <div class="tag-badge">
+        <span class="tag-pulse"></span>
+        <span>PROYECTO TÉCNICO ESCOLAR · HARDWARE FUNCIONAL</span>
+      </div>
+
+      <h1 class="hero-heading">
+        Escuchamos lo que nadie puede <em>ver ni oír</em>.
+      </h1>
+
+      <p class="hero-subtext">
+        SOLEAC es un detector acústico direccional de bajo costo diseñado para localizar fugas de gas y aire comprimido en segundos, capturando la fricción molecular inaudible que otros métodos pasan por alto.
+      </p>
+
+      <div class="hero-button-group">
+        <a href="#simulador" class="btn-solid">
+          <span>Experimentar Sintonizador</span>
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+        <a href="#como-funciona" class="btn-outline">
+          <span>Ver Principio de Medición</span>
+        </a>
+      </div>
+
+      <!-- LOOKBOOK DEL DISPOSITIVO -->
+      <div class="hero-device-card">
+        <div class="device-grid">
+          <div>
+            <span class="section-kicker">MONITOR DE BANCO DE PRUEBAS</span>
+            <h3 style="font-size: 1.8rem; margin-bottom: 12px;">Enfoque parabólico sobre 4 micrófonos</h3>
+            <p style="font-size: 0.92rem; color: var(--text-body); margin-bottom: 24px;">
+              En lugar de sensores químicos lentos que se saturan con el viento, SOLEAC apunta acústicamente hacia la tubería. Si hay un poro a presión, el ultrasonido rebota en la parábola y converge directo a la matriz MEMS.
+            </p>
+
+            <div class="device-meta-list">
+              <div class="meta-item">
+                <div class="meta-label">Rango Operativo</div>
+                <div class="meta-value">20–80 <span>kHz</span></div>
+              </div>
+              <div class="meta-item">
+                <div class="meta-label">Sensores de Escucha</div>
+                <div class="meta-value">4× <span>MEMS + Murata</span></div>
+              </div>
+              <div class="meta-item">
+                <div class="meta-label">Unidad de Cómputo</div>
+                <div class="meta-value">ESP32-S3 <span>Dual Core</span></div>
+              </div>
+              <div class="meta-item">
+                <div class="meta-label">Comunicación</div>
+                <div class="meta-value">BLE 5.0 <span>+ Touch LCD</span></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Osciloscopio interactivo en vivo -->
+          <div class="interactive-scope-box">
+            <div class="scope-header">
+              <span>OSCILOSCOPIO DE CAMPO // CH1</span>
+              <span style="color: var(--teal);" id="scopeFreqBadge">40.0 kHz PICO</span>
+            </div>
+            <canvas id="heroScope" class="scope-canvas"></canvas>
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 10px; font-size: 0.72rem; color: var(--text-muted); font-family: var(--font-mono);">
+              <span>Muestreo: 192 kS/s</span>
+              <span id="scopeDelayText">Δt Triangulación: 14.2 µs</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EL PROBLEMA REAL (NARRATIVA HUMANA) -->
+  <section class="section-spacing" id="historia">
+    <div class="container">
+      <div class="section-intro">
+        <span class="section-kicker">EL PROBLEMA SILENCIOSO</span>
+        <h2 class="section-title">¿Por qué construimos SOLEAC?</h2>
+        <p>
+          Tanto en el taller de la escuela como en pequeñas industrias y hogares, las fugas en redes presurizadas son invisibles y cotidianas. Investigamos los métodos actuales y descubrimos que faltaba una alternativa accesible y rápida.
+        </p>
+      </div>
+
+      <div class="problem-cards">
+        <div class="story-card">
+          <div>
+            <h3>El gasto invisible del aire</h3>
+            <p>
+              El aire comprimido es una de las formas de energía más caras. Un orificio de apenas 1 milímetro en un acople rápido pierde cerca de 75 litros por minuto, desperdiciando energía y forzando al compresor sin necesidad.
+            </p>
+          </div>
+          <div class="mono" style="margin-top: 20px; font-size: 0.75rem; color: var(--coral);">Pérdidas de hasta un 30% en talleres</div>
+        </div>
+
+        <div class="story-card">
+          <div>
+            <h3>El peligro en cañerías de gas</h3>
+            <p>
+              Una fuga pequeña en una unión empotrada no siempre genera olor suficiente al inicio, pero con el paso de las horas acumula mezclas inflamables en cielorrasos o bajo mesadas.
+            </p>
+          </div>
+          <div class="mono" style="margin-top: 20px; font-size: 0.75rem; color: var(--teal);">Detección temprana antes de acumulación</div>
+        </div>
+
+        <div class="story-card">
+          <div>
+            <h3>El límite de los métodos tradicionales</h3>
+            <p>
+              La esponja con agua y detergente requiere subirse a escaleras y mojar toda la instalación. Los equipos comerciales con cámara acústica existen, pero superan los $15.000 USD, siendo inalcanzables para talleres locales.
+            </p>
+          </div>
+          <div class="mono" style="margin-top: 20px; font-size: 0.75rem; color: var(--text-title);">Alternativa modular de bajo costo</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SINTONIZADOR DE ESPECTRO (WIDGET TÁCTIL INTERACTIVO) -->
+  <section class="section-spacing" id="simulador">
+    <div class="container">
+      <div class="tuner-container">
+        <div class="section-intro" style="margin-bottom: 24px;">
+          <span class="section-kicker">EXPERIENCIA INTERACTIVA</span>
+          <h2 class="section-title" style="font-size: 2.2rem;">Sintonizador Acústico de Laboratorio</h2>
+          <p>
+            Mueve el deslizador a través del espectro sonoro para entender cómo el filtro analógico de SOLEAC discrimina el ruido ambiental y aísla la firma ultrasónica del escape.
+          </p>
+        </div>
+
+        <div class="tuner-layout">
+          <div class="tuner-controls">
+            <div class="slider-group">
+              <div class="slider-label">
+                <span>Frecuencia de Escucha:</span>
+                <strong class="mono" id="freqReadout" style="color: var(--teal); font-size: 1.1rem;">40 kHz</strong>
+              </div>
+              <input type="range" min="5" max="80" value="40" class="freq-slider" id="freqInput">
+              <div style="display: flex; justify-content: space-between; font-size: 0.68rem; color: var(--text-muted); font-family: var(--font-mono);">
+                <span>5 kHz (Audible)</span>
+                <span>40 kHz (Pico Fuga)</span>
+                <span>80 kHz (Ultrasonido)</span>
+              </div>
+            </div>
+
+            <div class="status-callout" id="calloutBox">
+              <strong id="calloutTitle">Zona de Fuga Activa (38–45 kHz)</strong>
+              <span id="calloutDesc" style="color: var(--text-body);">Turbulencia característica producida por la caída de presión en orificios milimétricos. El micrófono Murata y los 4 MEMS entran en resonancia máxima.</span>
+            </div>
+          </div>
+
+          <!-- Canvas del osciloscopio dinámico -->
+          <div style="background: #04070c; border: 1px solid var(--border-subtle); border-radius: var(--radius-md); padding: 18px;">
+            <div style="display: flex; justify-content: space-between; margin-bottom: 8px; font-family: var(--font-mono); font-size: 0.75rem; color: var(--text-muted);">
+              <span>RESPUESTA ESPECTRAL LM358SN</span>
+              <span id="gainText" style="color: var(--teal);">Ganancia: +38 dB</span>
+            </div>
+            <canvas id="tunerCanvas" style="width: 100%; height: 170px; display: block; background: #030508; border-radius: 6px;"></canvas>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CÓMO FUNCIONA EL SISTEMA -->
+  <section class="section-spacing" id="como-funciona">
+    <div class="container">
+      <div class="section-intro">
+        <span class="section-kicker">PASO A PASO</span>
+        <h2 class="section-title">El camino de la señal: desde el tubo hasta la pantalla</h2>
+        <p>
+          El dispositivo combina física acústica tradicional en la etapa de captación y electrónica moderna para procesar los datos en tiempo real.
+        </p>
+      </div>
+
+      <div class="steps-row">
+        <div class="step-box">
+          <span class="step-number">01 // RECOLECCIÓN</span>
+          <h4>Reflector Parabólico</h4>
+          <p>
+            Al igual que un telescopio o una antena de satélite, la parábola capta frentes de onda dispersos y los enfoca en un punto céntrico con una ganancia mecánica limpia de +18 dB.
+          </p>
+        </div>
+
+        <div class="step-box">
+          <span class="step-number">02 // TRANSDUCCIÓN</span>
+          <h4>Cuadrante 4× MEMS</h4>
+          <p>
+            Cuatro micrófonos miniatura dispuestos en matriz miden la señal de forma independiente. Si la fuga viene desde la derecha, los micrófonos de la derecha reciben la onda fracciones de microsegundo antes.
+          </p>
+        </div>
+
+        <div class="step-box">
+          <span class="step-number">03 // FILTRADO Y GANANCIA</span>
+          <h4>LM358 & Pasa-Banda</h4>
+          <p>
+            Un circuito analógico rechaza el ruido ambiente de voces, pisadas o motores eléctricos (por debajo de 20 kHz) y amplifica la pequeña tensión del ultrasonido para el conversor ADC.
+          </p>
+        </div>
+
+        <div class="step-box">
+          <span class="step-number">04 // CÓMPUTO Y SALIDA</span>
+          <h4>ESP32-S3 + App BLE</h4>
+          <p>
+            El microcontrolador calcula la diferencia temporal (TDoA) para dibujar una cruz de puntería en la pantalla táctil y transmite los datos por Bluetooth a la app móvil.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ANATOMÍA DEL HARDWARE (PESTAÑAS INTERACTIVAS) -->
+  <section class="section-spacing" id="hardware">
+    <div class="container">
+      <div class="section-intro">
+        <span class="section-kicker">ANATOMÍA DEL PROTOTIPO</span>
+        <h2 class="section-title">Componentes elegidos para el proyecto</h2>
+        <p>
+          Seleccionamos componentes comerciales disponibles en cualquier tienda de electrónica para demostrar que la innovación no requiere presupuestos inalcanzables.
+        </p>
+      </div>
+
+      <!-- Selector de pestañas -->
+      <div class="hardware-tabs" id="hwTabs">
+        <button class="hw-tab-btn active" onclick="showHwTab(0)">01. Matriz 4× MEMS</button>
+        <button class="hw-tab-btn" onclick="showHwTab(1)">02. Antena Parabólica</button>
+        <button class="hw-tab-btn" onclick="showHwTab(2)">03. Procesador ESP32-S3</button>
+        <button class="hw-tab-btn" onclick="showHwTab(3)">04. Amplificador LM358</button>
+        <button class="hw-tab-btn" onclick="showHwTab(4)">05. Sensor MURATA</button>
+        <button class="hw-tab-btn" onclick="showHwTab(5)">06. Batería y Chasis</button>
+      </div>
+
+      <!-- Detalle dinámico del componente -->
+      <div class="hw-detail-card" id="hwCard">
+        <div class="hw-detail-text">
+          <div class="spec-badges" id="hwBadges">
+            <span class="spec-pill">Respuesta: 20–80 kHz</span>
+            <span class="spec-pill">Matriz Cuadrante</span>
+          </div>
+          <h3 id="hwTitle" style="margin-top: 12px;">Micrófonos MEMS en Configuración Tetraédrica</h3>
+          <p id="hwDesc">
+            Elegimos micrófonos MEMS por su perfil extremadamente compacto y su respuesta en frecuencia ultra ancha. Al colocarlos a distancias milimétricas exactas en el punto focal, permiten medir el retardo de fase sin obstruir el paso del aire.
+          </p>
+        </div>
+
+        <div class="hw-detail-box" id="hwSpecs">
+          <table>
+            <tr><td>Muestreo Simultáneo</td><td>4 canales sincronizados</td></tr>
+            <tr><td>Ancho de Banda</td><td>Hasta 80 kHz lineal</td></tr>
+            <tr><td>Montaje</td><td>Soporte focal desacoplado</td></tr>
+            <tr><td>Consumo de Energía</td><td>&lt; 15 mA total</td></tr>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECCIÓN APP MÓVIL (REALISTA CON IMAGEN REAL) -->
+  <section class="section-spacing" id="app">
+    <div class="container">
+      <div class="app-feature-grid">
+        <div>
+          <span class="section-kicker">CONECTIVIDAD SIN CABLES</span>
+          <h2 class="section-title">Telemetría directa en el celular</h2>
+          <p style="margin-bottom: 26px;">
+            Diseñamos una aplicación móvil complementaria que se conecta automáticamente vía Bluetooth Low Energy (BLE) con el dispositivo para que el técnico no tenga que desviar la mirada de la cañería.
+          </p>
+
+          <div class="app-benefits-list">
+            <div class="benefit-item">
+              <div class="benefit-bullet">✓</div>
+              <div class="benefit-content">
+                <h4>Indicador de Intensidad en dB SPL</h4>
+                <p>Muestra claramente la potencia del escape para estimar la gravedad de la fuga y verificar el ajuste de roscas o válvulas tras la reparación.</p>
+              </div>
+            </div>
+
+            <div class="benefit-item">
+              <div class="benefit-bullet">✓</div>
+              <div class="benefit-content">
+                <h4>Discriminación por Tipo de Fluido</h4>
+                <p>Filtros matemáticos en el microcontrolador ayudan a distinguir entre un escape de gas combustible y una pérdida de aire en líneas neumáticas.</p>
+              </div>
+            </div>
+
+            <div class="benefit-item">
+              <div class="benefit-bullet">✓</div>
+              <div class="benefit-content">
+                <h4>Registro con Fecha y Hora</h4>
+                <p>Permite guardar capturas de cada punto verificado para documentar informes de mantenimiento preventivo en talleres o comercios.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Teléfono con la captura real del usuario -->
+        <div>
+          <div class="phone-frame-realistic">
+            <div class="phone-screen-inner">
+              <img src="app-screenshot.jpeg" alt="Captura real de la app SOLEAC Monitor BLE" onerror="this.src='soleac_app.jpeg'; this.onerror=function(){this.src='WhatsApp Image 2026-09-08 at 10.34.01.jpeg'}">
+            </div>
+          </div>
+          <div style="text-align: center; margin-top: 12px; font-family: var(--font-mono); font-size: 0.75rem; color: var(--text-muted);">
+            Captura real de la aplicación SOLEAC en smartphone Android
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMPARATIVA HONESTA -->
+  <section class="section-spacing">
+    <div class="container">
+      <div class="section-intro">
+        <span class="section-kicker">EVALUACIÓN PRÁCTICA</span>
+        <h2 class="section-title">Comparación con otras alternativas</h2>
+        <p>Analizamos las opciones disponibles en el mercado para entender dónde se posiciona nuestro prototipo.</p>
+      </div>
+
+      <div class="comparison-section">
+        <table class="studio-table">
+          <thead>
+            <tr>
+              <th>Método de Detección</th>
+              <th>Distancia de Trabajo</th>
+              <th>Localización Direccional</th>
+              <th>Aire Comprimido</th>
+              <th>Costo Aproximado</th>
+              <th class="highlight-column">SOLEAC (Nuestro Proyecto)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Agua con Jabón</strong></td>
+              <td>0 metros (Contacto directo)</td>
+              <td>No (Solo burbuja visible)</td>
+              <td>Sí (Engorroso)</td>
+              <td>Mínimo</td>
+              <td class="highlight-column">Hasta 8 metros a distancia</td>
+            </tr>
+            <tr>
+              <td><strong>Sniffer Químico</strong></td>
+              <td>Menos de 10 cm</td>
+              <td>No (Solo concentración en aire)</td>
+              <td>No compatible</td>
+              <td>$150 – $400 USD</td>
+              <td class="highlight-column">Apunta directo a la fuga</td>
+            </tr>
+            <tr>
+              <td><strong>Cámara Acústica Comercial</strong></td>
+              <td>1 a 20 metros</td>
+              <td>Sí (Matriz de 64 micrófonos)</td>
+              <td>Sí</td>
+              <td>$12.000 – $25.000 USD</td>
+              <td class="highlight-column">Hardware abierto y accesible</td>
+            </tr>
+            <tr>
+              <td><strong>Inspección Olfativa</strong></td>
+              <td>Ambiente general</td>
+              <td>Impreciso</td>
+              <td>Inútil para aire</td>
+              <td>Sin costo</td>
+              <td class="highlight-column">Cero riesgo para el operador</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- PREGUNTAS FRECUENTES (HUMANAS Y CLARAS) -->
+  <section class="section-spacing" id="faq">
+    <div class="container">
+      <div class="section-intro" style="text-align: center; margin-inline: auto;">
+        <span class="section-kicker">DUDAS COMUNES</span>
+        <h2 class="section-title">Preguntas Frecuentes</h2>
+        <p>Respuestas técnicas sencillas sobre el funcionamiento y los límites del proyecto.</p>
+      </div>
+
+      <div class="faq-list">
+        <div class="faq-item active">
+          <button class="faq-trigger" onclick="toggleFaq(this)">
+            <span>¿Por qué detectar con ultrasonido y no con un sensor químico de gas?</span>
+            <span class="faq-symbol">+</span>
+          </button>
+          <div class="faq-content">
+            Los sensores químicos (como los semiconductores MQ) necesitan que el gas viaje por el aire hasta tocar la superficie del sensor, lo cual se ve afectado por corrientes de aire o ventilaciones. Además, no sirven para fugas de aire comprimido. El ultrasonido es inmediato, no depende del viento y funciona con cualquier fluido a presión.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-trigger" onclick="toggleFaq(this)">
+            <span>¿Qué función cumple exactamente la antena parabólica?</span>
+            <span class="faq-symbol">+</span>
+          </button>
+          <div class="faq-content">
+            Actúa como un lente acústico natural. Al tener geometría cónica parabólica, todas las ondas ultrasónicas que chocan contra la superficie son redirigidas hacia el centro exacto donde están montados los 4 micrófonos MEMS, logrando un aumento notable de sensibilidad sin necesidad de añadir más electrónica.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-trigger" onclick="toggleFaq(this)">
+            <span>¿Qué autonomía tiene el prototipo portátil?</span>
+            <span class="faq-symbol">+</span>
+          </button>
+          <div class="faq-content">
+            Con 2 celdas recargables de iones de litio (Li-ion) de 4000 mAh c/u, el consumo promedio del ESP32-S3 y la etapa analógica es de aproximadamente 140 mA con Bluetooth activo, lo que otorga más de 6 horas de inspección continua en campo.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top-grid">
+        <div>
+          <div class="brand-group" style="margin-bottom: 12px;">
+            <div class="brand-mark">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M2 12h2M6 8v8M10 4v16M14 7v10M18 10v4M22 12h-2"/></svg>
+            </div>
+            <div class="brand-name">SOLEAC<span>.</span></div>
+          </div>
+          <p style="font-size: 0.88rem; color: var(--text-body); max-width: 380px;">
+            Proyecto escolar de educación técnica. Demostrando que la ciencia acústica y el hardware abierto pueden resolver problemas industriales y cotidianos de forma sostenible.
+          </p>
+        </div>
+
+        <div class="footer-column">
+          <h5>Navegación</h5>
+          <ul>
+            <li><a href="#historia">El Problema</a></li>
+            <li><a href="#como-funciona">Principio de Medición</a></li>
+            <li><a href="#simulador">Sintonizador de Espectro</a></li>
+            <li><a href="#hardware">Módulos Electrónicos</a></li>
+            <li><a href="#app">App Móvil</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-column">
+          <h5>Tecnologías Clave</h5>
+          <ul>
+            <li><a href="#hardware">Micrófonos digitales MEMS</a></li>
+            <li><a href="#hardware">Microcontrolador ESP32-S3</a></li>
+            <li><a href="#hardware">Micrófono analógico Murata</a></li>
+            <li><a href="#hardware">Amplificador LM358SN</a></li>
+            <li><a href="#app">Protocolo Bluetooth LE</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-baseline">
+        <div>© 2026 SOLEAC · Proyecto Escolar</div>
+        <div>Diseñado y documentado por estudiantes técnicos.</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- SCRIPTS FUNCIONALES INTERACTIVOS -->
+  <script>
+    // 1. Menú móvil
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileNav = document.getElementById('mobileNav');
+    menuBtn.addEventListener('click', () => {
+      mobileNav.classList.toggle('open');
+    });
+    function closeMobile() {
+      mobileNav.classList.remove('open');
+    }
+
+    // 2. Osciloscopio del Hero en Canvas
+    const heroCanvas = document.getElementById('heroScope');
+    const hCtx = heroCanvas.getContext('2d');
+    let scopeT = 0;
+
+    function resizeHeroCanvas() {
+      heroCanvas.width = heroCanvas.parentElement.offsetWidth - 40;
+      heroCanvas.height = 180;
+    }
+    window.addEventListener('resize', resizeHeroCanvas);
+    resizeHeroCanvas();
+
+    function drawHeroScope() {
+      const w = heroCanvas.width;
+      const h = heroCanvas.height;
+      const cy = h / 2;
+
+      hCtx.clearRect(0, 0, w, h);
+
+      // Rejilla de osciloscopio tenue
+      hCtx.strokeStyle = 'rgba(255, 255, 255, 0.05)';
+      hCtx.lineWidth = 1;
+      for (let x = 20; x < w; x += 30) {
+        hCtx.beginPath(); hCtx.moveTo(x, 0); hCtx.lineTo(x, h); hCtx.stroke();
+      }
+      for (let y = 20; y < h; y += 30) {
+        hCtx.beginPath(); hCtx.moveTo(0, y); hCtx.lineTo(w, y); hCtx.stroke();
+      }
+
+      // Onda CH1 (40 kHz modulada)
+      hCtx.beginPath();
+      hCtx.lineWidth = 2;
+      hCtx.strokeStyle = '#00e5c8';
+
+      for (let x = 0; x < w; x++) {
+        // Simulación de ráfaga ultrasónica con envolvente
+        const carrier = Math.sin((x * 0.16) + scopeT);
+        const envelope = Math.sin((x * 0.015) + (scopeT * 0.2));
+        const y = cy + (carrier * envelope * 55) + (Math.random() - 0.5) * 4;
+
+        if (x === 0) hCtx.moveTo(x, y);
+        else hCtx.lineTo(x, y);
+      }
+      hCtx.stroke();
+
+      scopeT += 0.07;
+      requestAnimationFrame(drawHeroScope);
+    }
+    drawHeroScope();
+
+    // 3. Sintonizador de Espectro
+    const freqInput = document.getElementById('freqInput');
+    const freqReadout = document.getElementById('freqReadout');
+    const tunerCanvas = document.getElementById('tunerCanvas');
+    const tCtx = tunerCanvas.getContext('2d');
+    const calloutBox = document.getElementById('calloutBox');
+    const calloutTitle = document.getElementById('calloutTitle');
+    const calloutDesc = document.getElementById('calloutDesc');
+    const gainText = document.getElementById('gainText');
+    let currentFreq = 40;
+
+    function resizeTunerCanvas() {
+      tunerCanvas.width = tunerCanvas.parentElement.offsetWidth - 36;
+      tunerCanvas.height = 170;
+    }
+    window.addEventListener('resize', resizeTunerCanvas);
+    resizeTunerCanvas();
+
+    freqInput.addEventListener('input', (e) => {
+      currentFreq = parseInt(e.target.value);
+      freqReadout.textContent = `${currentFreq} kHz`;
+
+      if (currentFreq < 20) {
+        calloutBox.style.borderLeftColor = '#64748b';
+        calloutTitle.textContent = 'Espectro Audible (< 20 kHz) · Filtrado Activo';
+        calloutDesc.textContent = 'Voces humanas, zumbido de transformadores y vibraciones mecánicas. El filtro analógico pasa-altos atenúa esta región en -40 dB para evitar lecturas erróneas.';
+        gainText.textContent = 'Ganancia: -34 dB (Atenuado)';
+        gainText.style.color = '#64748b';
+      } else if (currentFreq >= 20 && currentFreq < 35) {
+        calloutBox.style.borderLeftColor = '#2575fc';
+        calloutTitle.textContent = 'Banda de Transición (20–34 kHz)';
+        calloutDesc.textContent = 'Comienzo del umbral inaudible para el oído humano. Detecta turbulencias de baja presión y flujo laminar en accesorios y mangueras.';
+        gainText.textContent = 'Ganancia: +18 dB';
+        gainText.style.color = '#2575fc';
+      } else if (currentFreq >= 35 && currentFreq <= 48) {
+        calloutBox.style.borderLeftColor = '#00e5c8';
+        calloutTitle.textContent = 'Pico Óptimo de Fuga (35–48 kHz)';
+        calloutDesc.textContent = 'Máxima sensibilidad del transductor Murata y los 4 MEMS. Aquí se produce la firma de fricción por orificios en cañerías de gas y aire.';
+        gainText.textContent = 'Ganancia: +38 dB (Máxima)';
+        gainText.style.color = '#00e5c8';
+      } else {
+        calloutBox.style.borderLeftColor = '#ff5733';
+        calloutTitle.textContent = 'Ultrasonido Superior (> 48 kHz)';
+        calloutDesc.textContent = 'Frecuencias elevadas producidas por microfugas de alta presión (mayor a 6 bar). Ideal para verificar cilindros presurizados y redes industriales.';
+        gainText.textContent = 'Ganancia: +24 dB';
+        gainText.style.color = '#ff5733';
+      }
+    });
+
+    let tunerTime = 0;
+    function drawTunerScope() {
+      const w = tunerCanvas.width;
+      const h = tunerCanvas.height;
+      const cy = h / 2;
+
+      tCtx.clearRect(0, 0, w, h);
+
+      // Eje central
+      tCtx.strokeStyle = 'rgba(255, 255, 255, 0.08)';
+      tCtx.beginPath();
+      tCtx.moveTo(0, cy);
+      tCtx.lineTo(w, cy);
+      tCtx.stroke();
+
+      // Curva en función de la frecuencia elegida
+      tCtx.beginPath();
+      tCtx.lineWidth = 2;
+      
+      let waveColor = '#00e5c8';
+      let amp = 50;
+      if (currentFreq < 20) {
+        waveColor = '#64748b';
+        amp = 10;
+      } else if (currentFreq >= 20 && currentFreq < 35) {
+        waveColor = '#2575fc';
+        amp = 30;
+      } else if (currentFreq > 48) {
+        waveColor = '#ff5733';
+        amp = 35;
+      }
+
+      tCtx.strokeStyle = waveColor;
+
+      const freqFactor = (currentFreq / 40) * 0.2;
+      for (let x = 0; x < w; x++) {
+        const y = cy + Math.sin((x * freqFactor) + tunerTime) * amp + (Math.random() - 0.5) * 4;
+        if (x === 0) tCtx.moveTo(x, y);
+        else tCtx.lineTo(x, y);
+      }
+      tCtx.stroke();
+
+      tunerTime += 0.08;
+      requestAnimationFrame(drawTunerScope);
+    }
+    drawTunerScope();
+
+    // 4. Pestañas de Hardware
+    const hwData = [
+      {
+        title: "Micrófonos MEMS en Configuración Cuadrante",
+        badges: ["Respuesta: 20–80 kHz", "Matriz 4 Canales", "Bajo Perfil"],
+        desc: "Elegimos cápsulas MEMS por su perfil milimétrico y su respuesta acústica lineal en altas frecuencias. Su disposición en cruz permite calcular el retardo espacial en los ejes X e Y sin crear sombras acústicas frente a la parábola.",
+        specs: [
+          ["Muestreo Simultáneo", "4 canales sincronizados"],
+          ["Ancho de Banda", "Hasta 80 kHz lineal"],
+          ["Montaje", "Punto focal desacoplado"],
+          ["Consumo", "< 15 mA"]
+        ]
+      },
+      {
+        title: "Antena Parabólica Reflectora de Haz",
+        badges: ["Ganancia: +18 dB", "Impresión 3D PETG", "Focalización"],
+        desc: "Diseñada y modelada en CAD respetando la curva parabólica matemática y = x²/(4f). Permite que las ondas sonoras provenientes del frente reboten uniformemente hacia el sensor, aumentando el alcance hasta 8 metros de distancia.",
+        specs: [
+          ["Diámetro de Apertura", "140 mm"],
+          ["Material del Chasis", "PETG técnico de alta densidad"],
+          ["Distancia Focal", "35 mm exactos"],
+          ["Peso Añadido", "Menos de 110 gramos"]
+        ]
+      },
+      {
+        title: "Cerebro Central: ESP32-S3 Dual Core",
+        badges: ["240 MHz", "ADC de Alta Velocidad", "Bluetooth 5.0 LE"],
+        desc: "Procesa las lecturas analógicas a través de sus conversores ADC de alta velocidad. El núcleo 0 se dedica al muestreo y cálculo de correlación cruzada TDoA, mientras el núcleo 1 refresca la pantalla táctil y transmite datos vía BLE.",
+        specs: [
+          ["Frecuencia de Reloj", "240 MHz Dual-Core"],
+          ["Pantalla Integrada", "LCD Touch 3.5 pulgadas"],
+          ["Protocolo Inalámbrico", "BLE 5.0 + Wi-Fi 2.4 GHz"],
+          ["Tiempo de Cálculo", "< 85 milisegundos"]
+        ]
+      },
+      {
+        title: "Preamplificador Operacional LM358SN",
+        badges: ["Doble Canal", "Bajo Ruido", "Alimentación Simple"],
+        desc: "Los micrófonos ultrasónicos entregan señales de apenas unos pocos milivoltios. El LM358SN se encarga de amplificar la señal con un filtro pasa-banda activo que rechaza el ruido por debajo de 20 kHz y adapta la tensión para el ADC del ESP32.",
+        specs: [
+          ["Ganancia de Etapa", "Ajustable 20x a 100x"],
+          ["Rango de Tensión", "0 V a 3.3 V DC"],
+          ["Filtro Integrado", "Pasa-banda 2º orden"],
+          ["Configuración", "Doble amplificador independiente"]
+        ]
+      },
+      {
+        title: "Micrófono Ultrasónico MURATA (40 kHz)",
+        badges: ["Resonancia 40 kHz", "Piezoeléctrico", "Referencia Cruzada"],
+        desc: "Actúa como sensor de validación por hardware. Al tener una resonancia muy aguda y estrecha exactamente en 40 kHz, confirma que la señal captada por los MEMS corresponde a un escape de presión y no a un transitorio parásito.",
+        specs: [
+          ["Frecuencia Central", "40.0 ± 1.0 kHz"],
+          ["Sensibilidad", "-65 dB / Pa"],
+          ["Impedancia", "2.0 kΩ resonante"],
+          ["Función", "Testigo de calibración cruzada"]
+        ]
+      },
+      {
+        title: "Batería Li-ion y Gestión de Energía",
+        badges: ["4000 mAh", "Protección BMS", "Carga USB-C"],
+        desc: "El equipo está pensado para ser usado con una sola mano en escaleras, pasarelas y fosas de taller. Incorpora un circuito de carga segura USB-C y reguladores LDO de bajo ruido para no meter interferencias a la etapa de audio.",
+        specs: [
+          ["Tensión Nominal", "3.7 V"],
+          ["Autonomía de Uso", "Mayor a 6 horas continuas"],
+          ["Puerto de Carga", "USB Tipo C convencional"],
+          ["Tiempo de Recarga", "Aproximadamente 90 minutos"]
+        ]
+      }
+    ];
+
+    function showHwTab(index) {
+      const tabs = document.querySelectorAll('.hw-tab-btn');
+      tabs.forEach((t, i) => t.classList.toggle('active', i === index));
+
+      const data = hwData[index];
+      document.getElementById('hwTitle').textContent = data.title;
+      document.getElementById('hwDesc').textContent = data.desc;
+
+      const badgesContainer = document.getElementById('hwBadges');
+      badgesContainer.innerHTML = data.badges.map(b => `<span class="spec-pill">${b}</span>`).join('');
+
+      const specsContainer = document.getElementById('hwSpecs');
+      specsContainer.innerHTML = `<table>${data.specs.map(([k, v]) => `<tr><td>${k}</td><td>${v}</td></tr>`).join('')}</table>`;
+    }
+
+    // 5. Acordeón FAQ
+    function toggleFaq(btn) {
+      const item = btn.parentElement;
+      const isActive = item.classList.contains('active');
+      
+      document.querySelectorAll('.faq-item').forEach(el => el.classList.remove('active'));
+      
+      if (!isActive) {
+        item.classList.add('active');
+      }
+    }
+  </script>
+</body>
+</html>
