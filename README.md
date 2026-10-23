@@ -11,6 +11,10 @@
   &nbsp;&nbsp;&nbsp;&nbsp;
   <img src="assets/LOGO%20IMPA2-02.png" alt="IMPA" height="140" />
 </p>
+    </body> 
+  <h2><strong>Logros y Reconocimientos</strong></h2>
+<li>🏅 <b>Ganadores del 1° puesto en la categoría Prototipos: Seguridad y Protección - ONIET 2026</b> (puntaje: 90/100)  </li>
+📍 Representando a la <b>E.E.S.T. N°7 “Taller Regional Quilmes”</b>, Buenos Aires, Argentina
 </body>
   <h2><strong>Organizacion de archivos</strong></h2>
 <em><li><b>Carpeta de campo</b>/Progreso y documentacion </li>
