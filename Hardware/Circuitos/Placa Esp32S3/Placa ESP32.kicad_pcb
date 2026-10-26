@@ -2022,14 +2022,14 @@
 			)
 		)
 	)
-	(footprint "Connector_Molex:Molex_KK-254_AE-6410-02A_1x02_P2.54mm_Vertical"
+	(footprint "Connector_Molex:Molex_KK-254_AE-6410-04A_1x04_P2.54mm_Vertical"
 		(layer "F.Cu")
 		(uuid "776ae540-0c82-490e-9c63-96aaaf33e423")
-		(at 111.390591 80.567277 180)
-		(descr "Molex KK-254 Interconnect System, old/engineering part number: AE-6410-02A example for new part number: 22-27-2021, 2 Pins (http://www.molex.com/pdm_docs/sd/022272021_sd.pdf)")
+		(at 116.4 80.6 180)
+		(descr "Molex KK-254 Interconnect System, old/engineering part number: AE-6410-04A example for new part number: 22-27-2041, 4 Pins (http://www.molex.com/pdm_docs/sd/022272021_sd.pdf)")
 		(tags "connector Molex KK-254 vertical")
 		(property "Reference" "J8"
-			(at 1.27 -4.12 0)
+			(at 3.81 -4.12 180)
 			(layer "F.SilkS")
 			(uuid "2538e980-33e9-4424-9499-b92a32f2297e")
 			(effects
@@ -2040,7 +2040,7 @@
 			)
 		)
 		(property "Value" "Conn_01x02"
-			(at 1.27 4.08 0)
+			(at 3.81 4.08 180)
 			(layer "F.Fab")
 			(uuid "41c250eb-c595-452d-bf9b-2b6312241097")
 			(effects
@@ -2051,7 +2051,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 0 0 0)
+			(at 0 0 180)
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "e9c68894-5ced-4739-8dc2-33f5fcfedb1b")
@@ -2062,7 +2062,7 @@
 			)
 		)
 		(property "Description" "Generic connector, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)"
-			(at 0 0 0)
+			(at 0 0 180)
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "97c25733-e6f8-4bf8-b497-6810ef4d5db8")
@@ -2073,7 +2073,7 @@
 			)
 		)
 		(property "KiLib_Generator" "connector/Molex"
-			(at 0 0 0)
+			(at 0 0 180)
 			(layer "F.SilkS")
 			(hide yes)
 			(uuid "5f70714c-f167-44b3-b0f7-80e4c8c20547")
@@ -2097,18 +2097,58 @@
 		(attr through_hole)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
-			(start 3.34 -2.43)
-			(end 3.34 -3.03)
+			(start 8.42 -2.43)
+			(end 8.42 -3.03)
 			(stroke
 				(width 0.12)
 				(type solid)
 			)
 			(layer "F.SilkS")
-			(uuid "e11e1038-db32-4e8c-974f-204c87c47cb6")
+			(uuid "96f7473c-6d28-454e-ae23-adf23829bd32")
 		)
 		(fp_line
-			(start 2.54 1.99)
-			(end 2.54 2.99)
+			(start 7.62 1.99)
+			(end 7.62 2.99)
+			(stroke
+				(width 0.12)
+				(type solid)
+			)
+			(layer "F.SilkS")
+			(uuid "33e2a9e9-72c8-49b2-a9f0-8e2dae0955ff")
+		)
+		(fp_line
+			(start 7.37 2.99)
+			(end 7.37 1.99)
+			(stroke
+				(width 0.12)
+				(type solid)
+			)
+			(layer "F.SilkS")
+			(uuid "4408c3fb-9e36-4fb3-9270-57cd3929cead")
+		)
+		(fp_line
+			(start 7.37 1.46)
+			(end 7.62 1.99)
+			(stroke
+				(width 0.12)
+				(type solid)
+			)
+			(layer "F.SilkS")
+			(uuid "02b165d3-8c8f-448d-8885-7c6e41e67796")
+		)
+		(fp_line
+			(start 6.82 -2.43)
+			(end 8.42 -2.43)
+			(stroke
+				(width 0.12)
+				(type solid)
+			)
+			(layer "F.SilkS")
+			(uuid "483dce39-c50b-4cc6-bb3c-95579a374326")
+		)
+		(fp_line
+			(start 6.82 -3.03)
+			(end 6.82 -2.43)
 			(stroke
 				(width 0.12)
 				(type solid)
@@ -2117,8 +2157,18 @@
 			(uuid "bb5da532-571c-4db4-b2a7-50b261dec51f")
 		)
 		(fp_line
-			(start 2.29 2.99)
-			(end 2.29 1.99)
+			(start 5.88 -2.43)
+			(end 5.88 -3.03)
+			(stroke
+				(width 0.12)
+				(type solid)
+			)
+			(layer "F.SilkS")
+			(uuid "fd0ef27b-4c5d-4167-89f4-78a49c427ade")
+		)
+		(fp_line
+			(start 4.28 -2.43)
+			(end 5.88 -2.43)
 			(stroke
 				(width 0.12)
 				(type solid)
@@ -2127,14 +2177,24 @@
 			(uuid "4a484b7f-0bb4-4cf3-ae58-57826549ec82")
 		)
 		(fp_line
-			(start 2.29 1.46)
-			(end 2.54 1.99)
+			(start 4.28 -3.03)
+			(end 4.28 -2.43)
 			(stroke
 				(width 0.12)
 				(type solid)
 			)
 			(layer "F.SilkS")
-			(uuid "02b165d3-8c8f-448d-8885-7c6e41e67796")
+			(uuid "e64d6294-788a-4710-9120-3598a0afa3b4")
+		)
+		(fp_line
+			(start 3.34 -2.43)
+			(end 3.34 -3.03)
+			(stroke
+				(width 0.12)
+				(type solid)
+			)
+			(layer "F.SilkS")
+			(uuid "e11e1038-db32-4e8c-974f-204c87c47cb6")
 		)
 		(fp_line
 			(start 1.74 -2.43)
@@ -2178,7 +2238,7 @@
 		)
 		(fp_line
 			(start 0.25 1.46)
-			(end 2.29 1.46)
+			(end 7.37 1.46)
 			(stroke
 				(width 0.12)
 				(type solid)
@@ -2198,7 +2258,7 @@
 		)
 		(fp_line
 			(start 0 1.99)
-			(end 2.54 1.99)
+			(end 7.62 1.99)
 			(stroke
 				(width 0.12)
 				(type solid)
@@ -2248,7 +2308,7 @@
 		)
 		(fp_rect
 			(start -1.38 -3.03)
-			(end 3.92 2.99)
+			(end 9 2.99)
 			(stroke
 				(width 0.12)
 				(type solid)
@@ -2259,7 +2319,7 @@
 		)
 		(fp_rect
 			(start -1.77 -3.42)
-			(end 4.32 3.38)
+			(end 9.39 3.38)
 			(stroke
 				(width 0.05)
 				(type solid)
@@ -2290,7 +2350,7 @@
 		)
 		(fp_rect
 			(start -1.27 -2.92)
-			(end 3.81 2.88)
+			(end 8.89 2.88)
 			(stroke
 				(width 0.1)
 				(type solid)
@@ -2300,7 +2360,7 @@
 			(uuid "cd91c141-a638-4b2e-9e50-0de4d0213d91")
 		)
 		(fp_text user "${REFERENCE}"
-			(at 1.27 -2.22 0)
+			(at 3.81 -2.22 180)
 			(layer "F.Fab")
 			(uuid "0d8fe10e-687f-42db-a1b2-bbcbc0ea11b2")
 			(effects
@@ -2333,8 +2393,24 @@
 			(pintype "passive")
 			(uuid "58de9cbb-7033-47e5-89ec-5ef74c773e32")
 		)
+		(pad "3" thru_hole oval
+			(at 5.08 0 180)
+			(size 1.74 2.19)
+			(drill 1.19)
+			(layers "*.Cu" "*.Mask")
+			(remove_unused_layers no)
+			(uuid "50ac3a62-c367-4a54-83c6-fafe9bb300ce")
+		)
+		(pad "4" thru_hole oval
+			(at 7.62 0 180)
+			(size 1.74 2.19)
+			(drill 1.19)
+			(layers "*.Cu" "*.Mask")
+			(remove_unused_layers no)
+			(uuid "7b122b6a-8727-4b72-997a-1617d49e6b23")
+		)
 		(embedded_fonts no)
-		(model "${KICAD10_3DMODEL_DIR}/Connector_Molex.3dshapes/Molex_KK-254_AE-6410-02A_1x02_P2.54mm_Vertical.step"
+		(model "${KICAD10_3DMODEL_DIR}/Connector_Molex.3dshapes/Molex_KK-254_AE-6410-04A_1x04_P2.54mm_Vertical.step"
 			(offset
 				(xyz 0 0 0)
 			)
@@ -2884,22 +2960,6 @@
 		(uuid "d642d5dc-2d93-40dc-aa1a-ee1c606aa870")
 	)
 	(segment
-		(start 110.6 117.8)
-		(end 107.2 121.2)
-		(width 1.5)
-		(layer "F.Cu")
-		(net "/5V")
-		(uuid "0f734bdb-86b6-4441-8bab-b5c4b7ea0651")
-	)
-	(segment
-		(start 110.6 95.6)
-		(end 110.6 117.8)
-		(width 1.5)
-		(layer "F.Cu")
-		(net "/5V")
-		(uuid "0fe362a5-eb88-411d-9c1b-6fed3b065ed2")
-	)
-	(segment
 		(start 108.935 80.58)
 		(end 108.863314 80.58)
 		(width 1.5)
@@ -2924,28 +2984,12 @@
 		(uuid "45ff2437-a3b1-41d5-b48d-876323943764")
 	)
 	(segment
-		(start 108.850591 80.567277)
-		(end 108.850591 93.850591)
-		(width 1.5)
-		(layer "F.Cu")
-		(net "/5V")
-		(uuid "88986beb-4ea8-4795-8516-09c4408d9265")
-	)
-	(segment
 		(start 108.863314 80.58)
 		(end 108.850591 80.567277)
 		(width 1.5)
 		(layer "F.Cu")
 		(net "/5V")
 		(uuid "deec99a1-1b77-474b-b8a1-339ecea80ef7")
-	)
-	(segment
-		(start 108.850591 93.850591)
-		(end 110.6 95.6)
-		(width 1.5)
-		(layer "F.Cu")
-		(net "/5V")
-		(uuid "f67b92a4-f58f-4eef-87dd-5decd3875545")
 	)
 	(segment
 		(start 96.99 117.4)
