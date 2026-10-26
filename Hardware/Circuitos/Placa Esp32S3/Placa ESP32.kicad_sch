@@ -2061,6 +2061,16 @@
 		)
 		(uuid "f43c00e6-5433-449a-b65b-ac064bb9b90c")
 	)
+	(wire
+		(pts
+			(xy 131.445 74.295) (xy 145.415 74.295)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "fabc9031-254a-4888-b3ce-40221ddef480")
+	)
 	(label "GPIO41"
 		(at 40.64 85.09 0)
 		(effects
@@ -2120,6 +2130,16 @@
 			(justify left bottom)
 		)
 		(uuid "4ae5b326-f6d0-4f45-bf3d-c5b642ec0327")
+	)
+	(label "GPIO11 (MQ-2)"
+		(at 131.445 74.295 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "507d1b90-6860-4211-bccd-2265a4f33291")
 	)
 	(label "GPIO10 (Entrada Murata)"
 		(at 111.125 82.55 180)
@@ -2882,7 +2902,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Connector_Molex:Molex_KK-254_AE-6410-04A_1x04_P2.54mm_Vertical"
+		(property "Footprint" "Connector_Molex:Molex_KK-254_AE-6410-02A_1x02_P2.54mm_Vertical"
 			(at 99.06 67.31 0)
 			(hide yes)
 			(show_name no)
@@ -3096,6 +3116,94 @@
 			(project "Placa ESP32"
 				(path "/61d975b5-0f12-484d-9c90-802e15475eba"
 					(reference "J4")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector_Generic:Conn_01x04")
+		(at 150.495 74.295 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "a38e2460-36b5-45b5-94a6-7799635c36af")
+		(property "Reference" "J2"
+			(at 153.67 74.2949 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "Conn_01x04"
+			(at 153.67 76.8349 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Connector_Molex:Molex_KK-254_AE-6410-04A_1x04_P2.54mm_Vertical"
+			(at 150.495 74.295 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 150.495 74.295 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Generic connector, single row, 01x04, script generated (kicad-library-utils/schlib/autogen/connector/)"
+			(at 150.495 74.295 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "95c8cb06-6f87-4a9a-89a5-d296b7e833c4")
+		)
+		(pin "3"
+			(uuid "d5bde6c4-71e4-4c2d-839d-202c444ca385")
+		)
+		(pin "4"
+			(uuid "fc53e604-3c1e-4a97-8e71-0e8dc4588cf9")
+		)
+		(pin "2"
+			(uuid "f7292d15-50d2-4ca7-a970-c95b31dfc3a0")
+		)
+		(instances
+			(project "Placa ESP32"
+				(path "/61d975b5-0f12-484d-9c90-802e15475eba"
+					(reference "J2")
 					(unit 1)
 				)
 			)
