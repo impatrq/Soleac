@@ -63,10 +63,14 @@
 <img src="assets/integrantes soleac.png" width="750" />
 <hr>
 <body>
-  <h3><strong>Contacto</strong></h3></body>
-<img alt="Static Badge" src="https://img.shields.io/badge/instagram-soleac.impa-8A2BE2">
-<img alt="Static Badge" src="https://img.shields.io/badge/Pagina%20Oficial-soleac.netlify.app-blue">
- <img alt="Static Badge" src="https://img.shields.io/badge/gmail-soleac104%40gmail.com-red">
+<h3><strong>Contacto</strong></h3>
+<p>
+  <a href="https://www.instagram.com/soleac.impa"><img src="https://img.shields.io/badge/instagram-soleac.impa-8A2BE2" alt="Instagram"></a><br>
+  <a href="https://soleac.netlify.app"><img src="https://img.shields.io/badge/Pagina%20Oficial-soleac.netlify.app-blue" alt="Página Oficial"></a><br>
+  <a href="mailto:soleac104@gmail.com"><img src="https://img.shields.io/badge/gmail-soleac104%40gmail.com-red" alt="Gmail"></a>
+</p>
 
-  <h3><strong>Otros proyectos</strong></h3></body>
-    <img alt="Static Badge" src="https://img.shields.io/badge/github-impatrq-blue">
+<h3><strong>Otros proyectos</strong></h3>
+<p>
+  <a href="https://github.com/impatrq"><img src="https://img.shields.io/badge/github-impatrq-blue" alt="GitHub"></a>
+</p>
