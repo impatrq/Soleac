@@ -163,7 +163,7 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "Connector_Generic:Conn_01x04"
+		(symbol "Connector_Generic:Conn_01x08"
 			(pin_names
 				(offset 1.016)
 				(hide yes)
@@ -174,7 +174,7 @@
 			(in_pos_files yes)
 			(duplicate_pin_numbers_are_jumpers no)
 			(property "Reference" "J"
-				(at 0 5.08 0)
+				(at 0 10.16 0)
 				(show_name no)
 				(do_not_autoplace no)
 				(effects
@@ -183,8 +183,8 @@
 					)
 				)
 			)
-			(property "Value" "Conn_01x04"
-				(at 0 -7.62 0)
+			(property "Value" "Conn_01x08"
+				(at 0 -12.7 0)
 				(show_name no)
 				(do_not_autoplace no)
 				(effects
@@ -215,7 +215,7 @@
 					)
 				)
 			)
-			(property "Description" "Generic connector, single row, 01x04, script generated (kicad-library-utils/schlib/autogen/connector/)"
+			(property "Description" "Generic connector, single row, 01x08, script generated (kicad-library-utils/schlib/autogen/connector/)"
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -248,16 +248,38 @@
 					)
 				)
 			)
-			(symbol "Conn_01x04_1_1"
+			(symbol "Conn_01x08_1_1"
 				(rectangle
-					(start -1.27 3.81)
-					(end 1.27 -6.35)
+					(start -1.27 8.89)
+					(end 1.27 -11.43)
 					(stroke
 						(width 0.254)
 						(type default)
 					)
 					(fill
 						(type background)
+					)
+				)
+				(rectangle
+					(start -1.27 7.747)
+					(end 0 7.493)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(rectangle
+					(start -1.27 5.207)
+					(end 0 4.953)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
 					)
 				)
 				(rectangle
@@ -304,8 +326,30 @@
 						(type none)
 					)
 				)
+				(rectangle
+					(start -1.27 -7.493)
+					(end 0 -7.747)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(rectangle
+					(start -1.27 -10.033)
+					(end 0 -10.287)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
 				(pin passive line
-					(at -5.08 2.54 0)
+					(at -5.08 7.62 0)
 					(length 3.81)
 					(name "Pin_1"
 						(effects
@@ -323,7 +367,7 @@
 					)
 				)
 				(pin passive line
-					(at -5.08 0 0)
+					(at -5.08 5.08 0)
 					(length 3.81)
 					(name "Pin_2"
 						(effects
@@ -341,7 +385,7 @@
 					)
 				)
 				(pin passive line
-					(at -5.08 -2.54 0)
+					(at -5.08 2.54 0)
 					(length 3.81)
 					(name "Pin_3"
 						(effects
@@ -359,7 +403,7 @@
 					)
 				)
 				(pin passive line
-					(at -5.08 -5.08 0)
+					(at -5.08 0 0)
 					(length 3.81)
 					(name "Pin_4"
 						(effects
@@ -369,6 +413,78 @@
 						)
 					)
 					(number "4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -5.08 -2.54 0)
+					(length 3.81)
+					(name "Pin_5"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "5"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -5.08 -5.08 0)
+					(length 3.81)
+					(name "Pin_6"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "6"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -5.08 -7.62 0)
+					(length 3.81)
+					(name "Pin_7"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "7"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -5.08 -10.16 0)
+					(length 3.81)
+					(name "Pin_8"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "8"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -1029,16 +1145,16 @@
 		(uuid "7a136dec-fdd6-4027-91b3-af97753ecaeb")
 	)
 	(junction
-		(at 92.71 78.74)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "bfc81e4a-68f0-4f7d-8eb1-ae53c5f336fe")
-	)
-	(junction
 		(at 95.25 73.66)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "d455d47f-bb92-4787-b31f-d703a162e4b8")
+	)
+	(junction
+		(at 92.71 76.2)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "d6385688-218a-4049-83f7-babe0841ccd4")
 	)
 	(junction
 		(at 63.5 49.53)
@@ -1068,6 +1184,36 @@
 	)
 	(wire
 		(pts
+			(xy 164.465 88.9) (xy 139.7 88.9)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2b3049d9-1ece-447f-b99b-379a29aa5059")
+	)
+	(wire
+		(pts
+			(xy 139.7 86.36) (xy 164.465 86.36)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2d4ffb9b-023a-4908-b285-43c5a2df8106")
+	)
+	(wire
+		(pts
+			(xy 139.7 71.12) (xy 164.465 71.12)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2f36d2d9-2ae0-411d-aa52-3169fe45ae18")
+	)
+	(wire
+		(pts
 			(xy 81.28 89.535) (xy 81.28 98.425)
 		)
 		(stroke
@@ -1078,7 +1224,17 @@
 	)
 	(wire
 		(pts
-			(xy 46.99 59.69) (xy 46.99 78.74)
+			(xy 139.7 83.82) (xy 164.465 83.82)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "34272ea0-ed92-4fae-889d-f9ca70ad1d54")
+	)
+	(wire
+		(pts
+			(xy 46.99 59.69) (xy 46.99 76.2)
 		)
 		(stroke
 			(width 0)
@@ -1098,7 +1254,7 @@
 	)
 	(wire
 		(pts
-			(xy 92.71 59.69) (xy 92.71 78.74)
+			(xy 92.71 59.69) (xy 92.71 76.2)
 		)
 		(stroke
 			(width 0)
@@ -1188,7 +1344,7 @@
 	)
 	(wire
 		(pts
-			(xy 95.25 73.66) (xy 162.56 73.66)
+			(xy 95.25 73.66) (xy 164.465 73.66)
 		)
 		(stroke
 			(width 0)
@@ -1198,23 +1354,13 @@
 	)
 	(wire
 		(pts
-			(xy 92.71 78.74) (xy 162.56 78.74)
+			(xy 139.7 78.74) (xy 164.465 78.74)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "7cc5c014-9fc2-43db-8386-fff5bbc22514")
-	)
-	(wire
-		(pts
-			(xy 139.7 76.2) (xy 162.56 76.2)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "83a0a6d1-b605-4fce-8eaf-5ac7f96648da")
+		(uuid "840b115d-f29e-4887-8bbd-cd7cf39d0189")
 	)
 	(wire
 		(pts
@@ -1248,7 +1394,7 @@
 	)
 	(wire
 		(pts
-			(xy 46.99 78.74) (xy 92.71 78.74)
+			(xy 46.99 76.2) (xy 92.71 76.2)
 		)
 		(stroke
 			(width 0)
@@ -1308,16 +1454,6 @@
 	)
 	(wire
 		(pts
-			(xy 139.7 81.28) (xy 162.56 81.28)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "bbcddc43-6a83-4873-abc7-3034370496a6")
-	)
-	(wire
-		(pts
 			(xy 95.25 73.66) (xy 95.25 59.69)
 		)
 		(stroke
@@ -1338,6 +1474,16 @@
 	)
 	(wire
 		(pts
+			(xy 92.71 76.2) (xy 164.465 76.2)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e0bed5a2-0b32-421c-bc29-780676af48d0")
+	)
+	(wire
+		(pts
 			(xy 109.22 49.53) (xy 133.35 49.53)
 		)
 		(stroke
@@ -1345,6 +1491,16 @@
 			(type default)
 		)
 		(uuid "e1a642c9-51c3-4453-ba04-a602529c08f6")
+	)
+	(wire
+		(pts
+			(xy 139.7 81.28) (xy 164.465 81.28)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f2092c8a-8ed5-4b94-bf01-25880916867c")
 	)
 	(label "3.3V"
 		(at 133.35 49.53 0)
@@ -1356,7 +1512,7 @@
 		)
 		(uuid "12a42321-eeb0-49b1-a88a-f326fbf128e5")
 	)
-	(label "GPIO41"
+	(label "GPIO39 c"
 		(at 139.7 73.66 0)
 		(effects
 			(font
@@ -1367,7 +1523,7 @@
 		(uuid "1e0c0390-fbf2-4671-8579-619675d3ab9c")
 	)
 	(label "Earth"
-		(at 139.7 81.28 0)
+		(at 139.7 71.12 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1397,7 +1553,7 @@
 		(uuid "50ca0808-1810-4d6f-b762-83bf4e41b10f")
 	)
 	(label "3.3V"
-		(at 139.7 76.2 0)
+		(at 139.7 88.9 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1416,8 +1572,8 @@
 		)
 		(uuid "75fbe63d-87b0-43fa-a1c1-2de3006712b1")
 	)
-	(label "GPIO40"
-		(at 139.7 78.74 0)
+	(label "GPIO38 D"
+		(at 139.7 76.2 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1455,6 +1611,85 @@
 			(justify right bottom)
 		)
 		(uuid "e5b02533-c5c6-433b-a38c-3c612a47ef59")
+	)
+	(symbol
+		(lib_id "power:Earth")
+		(at 139.7 81.28 270)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "1bf3d7b2-018d-4189-8b81-9914e596c07a")
+		(property "Reference" "#PWR010"
+			(at 133.35 81.28 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "Earth"
+			(at 135.89 81.2799 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" ""
+			(at 139.7 81.28 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 139.7 81.28 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"Earth\""
+			(at 139.7 81.28 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "40f1c6af-3822-49d0-b354-a9cd1079b31b")
+		)
+		(instances
+			(project "Placa Mems - SOLEAC"
+				(path "/6056247f-5a3c-41d0-9550-be955fbfd0f2"
+					(reference "#PWR010")
+					(unit 1)
+				)
+			)
+		)
 	)
 	(symbol
 		(lib_id "power:Earth")
@@ -1530,6 +1765,85 @@
 			(project "Placa Mems - SOLEAC"
 				(path "/6056247f-5a3c-41d0-9550-be955fbfd0f2"
 					(reference "#PWR08")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:Earth")
+		(at 139.7 83.82 270)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "1f4aadda-5d93-4087-ba4c-907784954c9f")
+		(property "Reference" "#PWR011"
+			(at 133.35 83.82 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "Earth"
+			(at 135.89 83.8199 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" ""
+			(at 139.7 83.82 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 139.7 83.82 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"Earth\""
+			(at 139.7 83.82 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "ab4ee34f-f0fb-4bec-afaf-406af8008a55")
+		)
+		(instances
+			(project "Placa Mems - SOLEAC"
+				(path "/6056247f-5a3c-41d0-9550-be955fbfd0f2"
+					(reference "#PWR011")
 					(unit 1)
 				)
 			)
@@ -1874,6 +2188,85 @@
 		)
 	)
 	(symbol
+		(lib_id "power:Earth")
+		(at 139.7 86.36 270)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "981dcc89-22d5-475a-bdc8-e156ca41ecf0")
+		(property "Reference" "#PWR012"
+			(at 133.35 86.36 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "Earth"
+			(at 135.89 86.3599 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" ""
+			(at 139.7 86.36 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 139.7 86.36 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"Earth\""
+			(at 139.7 86.36 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "c5371a2d-6148-4646-8311-75cb65cca53c")
+		)
+		(instances
+			(project "Placa Mems - SOLEAC"
+				(path "/6056247f-5a3c-41d0-9550-be955fbfd0f2"
+					(reference "#PWR012")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Murata:MA4024R")
 		(at 73.66 89.535 0)
 		(unit 1)
@@ -2037,6 +2430,185 @@
 	)
 	(symbol
 		(lib_id "power:Earth")
+		(at 139.7 78.74 270)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "bb19d3aa-f303-4d90-b339-5eb42a32dd45")
+		(property "Reference" "#PWR09"
+			(at 133.35 78.74 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "Earth"
+			(at 135.89 78.7399 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" ""
+			(at 139.7 78.74 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 139.7 78.74 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"Earth\""
+			(at 139.7 78.74 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "f12c094d-81c2-486e-b374-150fd8c2f402")
+		)
+		(instances
+			(project "Placa Mems - SOLEAC"
+				(path "/6056247f-5a3c-41d0-9550-be955fbfd0f2"
+					(reference "#PWR09")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector_Generic:Conn_01x08")
+		(at 169.545 78.74 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "bde78da6-d389-4a0b-b6bb-7a139e2a1ef4")
+		(property "Reference" "J1"
+			(at 172.72 78.7399 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "Conn_01x08"
+			(at 172.72 81.2799 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 169.545 78.74 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 169.545 78.74 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Generic connector, single row, 01x08, script generated (kicad-library-utils/schlib/autogen/connector/)"
+			(at 169.545 78.74 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "a2065bd6-7934-478a-a324-4ddc497c1d33")
+		)
+		(pin "8"
+			(uuid "19a8fed3-5a68-4484-a89b-e876f64c058f")
+		)
+		(pin "7"
+			(uuid "39a71472-26db-4037-a6ce-cb02614a258f")
+		)
+		(pin "2"
+			(uuid "451fb666-2a5e-4316-a066-183d21d0f420")
+		)
+		(pin "6"
+			(uuid "744101ae-30f3-4b4a-a1c4-b8c6e2039697")
+		)
+		(pin "3"
+			(uuid "5bfb0e1f-a7e4-46e3-b482-ab55d319e31c")
+		)
+		(pin "4"
+			(uuid "00e26048-45a8-4310-9b0c-4ef228f3330f")
+		)
+		(pin "5"
+			(uuid "da146bfb-314e-4411-82d7-098c99554791")
+		)
+		(instances
+			(project "Placa Mems - SOLEAC"
+				(path "/6056247f-5a3c-41d0-9550-be955fbfd0f2"
+					(reference "J1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:Earth")
 		(at 109.22 33.02 180)
 		(unit 1)
 		(body_style 1)
@@ -2108,94 +2680,6 @@
 			(project "Placa Mems - SOLEAC"
 				(path "/6056247f-5a3c-41d0-9550-be955fbfd0f2"
 					(reference "#PWR04")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Connector_Generic:Conn_01x04")
-		(at 167.64 76.2 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "db7f2f39-f848-49d2-8098-7ead67b1a3a4")
-		(property "Reference" "J2"
-			(at 170.18 76.1999 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "Conn_01x04"
-			(at 170.18 78.7399 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Connector_Molex:Molex_KK-254_AE-6410-04A_1x04_P2.54mm_Vertical"
-			(at 167.64 76.2 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 167.64 76.2 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Generic connector, single row, 01x04, script generated (kicad-library-utils/schlib/autogen/connector/)"
-			(at 167.64 76.2 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "3"
-			(uuid "8568b6b8-50a4-4700-9a9e-b83aa4b448ab")
-		)
-		(pin "2"
-			(uuid "a7b380f1-b57d-469c-8969-392f21567887")
-		)
-		(pin "1"
-			(uuid "5c4bb71e-f828-430c-9d6f-eaa271bf4c83")
-		)
-		(pin "4"
-			(uuid "d7c227fa-ef8b-4869-adfe-45e12fdd41b4")
-		)
-		(instances
-			(project "Placa Mems - SOLEAC"
-				(path "/6056247f-5a3c-41d0-9550-be955fbfd0f2"
-					(reference "J2")
 					(unit 1)
 				)
 			)
@@ -2278,6 +2762,85 @@
 			(project "Placa Mems - SOLEAC"
 				(path "/6056247f-5a3c-41d0-9550-be955fbfd0f2"
 					(reference "J6")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:Earth")
+		(at 139.7 71.12 270)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "e9545c38-fbfa-4042-8d22-1fe75d9af89b")
+		(property "Reference" "#PWR013"
+			(at 133.35 71.12 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "Earth"
+			(at 135.89 71.1199 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" ""
+			(at 139.7 71.12 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 139.7 71.12 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"Earth\""
+			(at 139.7 71.12 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "a5802e34-722a-4dc1-8ed5-965671aa2ee3")
+		)
+		(instances
+			(project "Placa Mems - SOLEAC"
+				(path "/6056247f-5a3c-41d0-9550-be955fbfd0f2"
+					(reference "#PWR013")
 					(unit 1)
 				)
 			)
