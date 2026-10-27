@@ -675,6 +675,66 @@
 		(at 96.52 54.61)
 		(uuid "ea28ad87-7af3-4580-b81a-c65d037347c2")
 	)
+	(wire
+		(pts
+			(xy 101.6 54.61) (xy 111.76 54.61)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1493702a-80a2-4389-ac07-f7b23c0449bf")
+	)
+	(wire
+		(pts
+			(xy 111.76 46.99) (xy 111.76 52.07)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7969a4b3-f78c-4a53-ad67-d57db9e8b841")
+	)
+	(wire
+		(pts
+			(xy 88.9 54.61) (xy 93.98 54.61)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b1c10f60-e1da-4f9d-8ff7-c8a46a2fdf6d")
+	)
+	(wire
+		(pts
+			(xy 76.835 54.61) (xy 81.28 54.61)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b1f4ea3d-3c10-4c03-9236-1f6c798be802")
+	)
+	(wire
+		(pts
+			(xy 99.06 67.31) (xy 99.06 54.61)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b9ede230-cf0f-42bc-adcb-8535f15ff784")
+	)
+	(wire
+		(pts
+			(xy 63.5 54.61) (xy 69.215 54.61)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c10a00c0-292a-482c-b61d-7e8d061f36d7")
+	)
 	(symbol
 		(lib_id "power:Earth")
 		(at 99.06 67.31 0)
