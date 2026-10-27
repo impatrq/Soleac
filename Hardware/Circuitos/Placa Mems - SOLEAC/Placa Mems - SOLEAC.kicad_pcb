@@ -1127,7 +1127,6 @@
 			)
 		)
 		(property ki_fp_filters "Connector*:*_1x??_*")
-		(path "/db7f2f39-f848-49d2-8098-7ead67b1a3a4")
 		(sheetname "/")
 		(sheetfile "Placa Mems - SOLEAC.kicad_sch")
 		(units
