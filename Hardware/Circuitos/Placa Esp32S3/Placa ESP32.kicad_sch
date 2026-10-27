@@ -2486,7 +2486,7 @@
 		)
 		(uuid "bcf74c64-380a-4089-9c27-648832f678dd")
 	)
-	(label "GPIO10 (Entrada Murata)"
+	(label "GPIO18 (Entrada Murata)"
 		(at 134.62 142.24 0)
 		(effects
 			(font
