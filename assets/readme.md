@@ -1,5 +1,5 @@
--`LOGO IMPA2-02.png` Logo E.E.S.T N°7 IMPA TRQ 
--`LOGO Soleac.png` Logo Soleac con fondo.
--`LOGO_Soleac-removebg-preview__1_-removebg-preview.png` Logo Soleac sin fondo.
--`integrantes soleac.png` Imagen de presentación de los integrantes de Soleac.
--`modelizacion Soleac.jpeg` Captura de pantalla de blender del modelo pistola con antena ultrasonica.
+- `LOGO IMPA2-02.png` Logo E.E.S.T N°7 IMPA TRQ
+- `LOGO Soleac.png` Logo Soleac con fondo.
+- `LOGO_Soleac-removebg-preview__1_-removebg-preview.png` Logo Soleac sin fondo.
+- `integrantes soleac.png` Imagen de presentación de los integrantes de Soleac.
+- `modelizacion Soleac.jpeg` Captura de pantalla de blender del modelo pistola con antena ultrasonica.
