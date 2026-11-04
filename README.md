@@ -75,6 +75,7 @@
   <a href="https://www.instagram.com/soleac.impa"><img src="https://img.shields.io/badge/instagram-soleac.impa-8A2BE2" alt="Instagram"></a><br>
   <a href="https://soleac.netlify.app"><img src="https://img.shields.io/badge/Pagina%20Oficial-soleac.netlify.app-blue" alt="Página Oficial"></a><br>
   <a href="mailto:soleac104@gmail.com"><img src="https://img.shields.io/badge/gmail-soleac104%40gmail.com-red" alt="Gmail"></a>
+    <a href="https://www.linkedin.com/in/soleac-detector-de-fugas-2b0241449/"><img src="https://img.shields.io/badge/linkedin-soleac-detector-de-fugas-2b0241449-blue" alt="Linkedin"></a><br>
 </p>
 
 <h3><strong>Otros proyectos</strong></h3>
