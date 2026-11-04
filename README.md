@@ -65,6 +65,7 @@
   <li>Sanabria Federico</li>
   <li>Romero Julian</li>
     <li>Paolo Valentino</li></em>
+</body>
 <img src="assets/integrantes soleac.png" width="750" />
 <hr>
 <body>
