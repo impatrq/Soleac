@@ -28,9 +28,9 @@
    <em><b>Soleac es un instrumento tecnologico detector de fugas de aire comprimido y gas. 
    <br>Mediante receptores de frecuencia tales cómo:</b>
    <li>Microfono MEMS SPH0641LU4H-1</li>
-    <li>MURATA ma40s4r</li>
+    <li>MURATA MA40S4R</li>
 <b>Podemos captar fugas en caños, ya que estas generan una frecuencia de entre 20khz y 80khz dependiendo el tamaño.<br>Mediante el siguiente sensor:</b>
- <li>Sensor de gas MQ2</li>
+ <li>Sensor de gas MQ-9</li>
  <b>Al acercar el instrumento, este sensor confirma si realmente hay una fuga, cabe aclarar que solo funciona sensando los siguientes gases:</b>
  <ul>
   <li>Gas Licuado de Petróleo</li>
@@ -66,6 +66,7 @@
   <li>Romero Julian</li>
     <li>Paolo Valentino</li></em>
 </body>
+<hr>
 <img src="assets/integrantes soleac.png" width="750" />
 <hr>
 <body>
