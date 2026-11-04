@@ -54,8 +54,8 @@
   <h2><strong>Componentes principales del proyecto</strong></h2>
   <em><li>Esp32 S3 Touch Lcd 3.5B</li>
   <li>Microfono MEMS SPH0641LU4H-1</li>
-  <li>MURATA ma40s4r</li>
-  <li>sensor de gas MQ2</li></em>
+  <li>MURATA MA40S4R</li>
+  <li>Sensor de gas MQ-9</li></em>
 </body>
 <hr>
 <body>
