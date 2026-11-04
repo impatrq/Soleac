@@ -60,13 +60,12 @@
 <hr>
 <body>
     <h2><strong>Integrantes</strong></h2>
-<img src="assets/integrantes soleac.png" width="750" />
- <h2><strong>Componentes principales del proyecto</strong></h2>
   <em><li>Rea Vera Jhonatan</li>
   <li>Solis Tobias</li>
   <li>Sanabria Federico</li>
   <li>Romero Julian</li>
     <li>Paolo Valentino</li></em>
+<img src="assets/integrantes soleac.png" width="750" />
 <hr>
 <body>
 <h3><strong>Contacto</strong></h3>
