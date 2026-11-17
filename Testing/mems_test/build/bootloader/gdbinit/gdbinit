@@ -1,0 +1,2 @@
+source /home/julian/Downloads/Soleac/SOLEAC/mems_test/build/bootloader/gdbinit/symbols
+source /home/julian/Downloads/Soleac/SOLEAC/mems_test/build/bootloader/gdbinit/connect

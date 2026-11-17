@@ -1,0 +1,15 @@
+Command: /home/julian/.espressif/python_env/idf6.0_py3.12_env/bin/python /home/julian/.espressif/v6.0.2/esp-idf/tools/idf_monitor.py -p /dev/ttyACM0 -b 115200 --toolchain-prefix xtensa-esp32s3-elf- --target esp32s3 --revision 0 /home/julian/Downloads/Soleac/SOLEAC/mems_test/build/soleac_mems_test.elf /home/julian/Downloads/Soleac/SOLEAC/mems_test/build/bootloader/bootloader.elf -m '/home/julian/.espressif/python_env/idf6.0_py3.12_env/bin/python' '/home/julian/.espressif/v6.0.2/esp-idf/tools/idf.py' '-C' 'mems_test' '-p' '/dev/ttyACM0'
+--- esp-idf-monitor 1.10.0 on /dev/ttyACM0 115200
+--- Quit: Ctrl+] | Menu: Ctrl+T | Help: Ctrl+T followed by Ctrl+H
+--- 0x420075db: uart_ll_get_txfifo_len at /home/julian/.espressif/v6.0.2/esp-idf/components/esp_hal_uart/esp32s3/include/hal/uart_ll.h:434(inlined by) uart_tx_char at /home/julian/.espressif/v6.0.2/esp-idf/components/esp_driver_uart/src/uart_vfs.c:190
+--- 0x403c8700: _stext at ??:?
+--- 0x403c8908: call_start_cpu0 at /home/julian/.espressif/v6.0.2/esp-idf/components/bootloader/subproject/main/bootloader_start.c:27
+--- ERROR: device reports readiness to read but returned no data (device disconnected or multiple access on port?)
+--- Waiting for the device to reconnect........................
+--- ERROR: device reports readiness to read but returned no data (device disconnected or multiple access on port?)
+--- Waiting for the device to reconnect.
+--- ERROR: device reports readiness to read but returned no data (device disconnected or multiple access on port?)
+--- Waiting for the device to reconnect........
+--- ERROR: device reports readiness to read but returned no data (device disconnected or multiple access on port?)
+--- Waiting for the device to reconnect........
+

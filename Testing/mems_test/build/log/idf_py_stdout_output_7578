@@ -1,0 +1,499 @@
+Command: /home/julian/.espressif/python_env/idf6.0_py3.12_env/bin/python /home/julian/.espressif/v6.0.2/esp-idf/tools/idf_monitor.py -p /dev/ttyACM0 -b 115200 --toolchain-prefix xtensa-esp32s3-elf- --target esp32s3 --revision 0 /home/julian/Downloads/Soleac/SOLEAC/mems_test/build/soleac_mems_test.elf /home/julian/Downloads/Soleac/SOLEAC/mems_test/build/bootloader/bootloader.elf -m '/home/julian/.espressif/python_env/idf6.0_py3.12_env/bin/python' '/home/julian/.espressif/v6.0.2/esp-idf/tools/idf.py' '-C' 'mems_test' '-p' '/dev/ttyACM0'
+[0;32mI (283) MEMS_TEST: Reloj PDM=3072000 Hz; PCM=192000 Hz; tono de prueba Goertzel=1 kHz[0m
+ESP-ROM:esp32s3-20210327
+Build:Mar 27 2021
+rst:0x15 (USB_UART_CHIP_RESET),boot:0x29 (SPI_FAST_FLASH_BOOT)
+Saved PC:0x420075db
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fce2820,len:0x14f0
+load:0x403c8700,len:0xda0
+load:0x403cb700,len:0x2f54
+entry 0x403c8908
+[0;32mI (24) boot: ESP-IDF v6.0.2 2nd stage bootloader[0m
+[0;32mI (24) boot: compile time Nov 10 2026 16:54:26[0m
+[0;32mI (25) boot: Multicore bootloader[0m
+[0;32mI (25) boot: chip revision: v0.2[0m
+[0;32mI (28) boot: efuse block revision: v1.3[0m
+[0;32mI (31) boot.esp32s3: Boot SPI Speed : 80MHz[0m
+[0;32mI (35) boot.esp32s3: SPI Mode       : DIO[0m
+[0;32mI (39) boot.esp32s3: SPI Flash Size : 2MB[0m
+[0;32mI (43) boot: Enabling RNG early entropy source...[0m
+[0;32mI (47) boot: Partition Table:[0m
+[0;32mI (50) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (56) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (62) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (69) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (76) boot: End of partition table[0m
+[0;32mI (79) esp_image: segment 0: paddr=00010020 vaddr=3c020020 size=0b284h ( 45700) map[0m
+[0;32mI (95) esp_image: segment 1: paddr=0001b2ac vaddr=3fc90a00 size=030f8h ( 12536) load[0m
+[0;32mI (98) esp_image: segment 2: paddr=0001e3ac vaddr=40374000 size=01c6ch (  7276) load[0m
+[0;32mI (103) esp_image: segment 3: paddr=00020020 vaddr=42000020 size=15844h ( 88132) map[0m
+[0;32mI (125) esp_image: segment 4: paddr=0003586c vaddr=40375c6c size=0acd0h ( 44240) load[0m
+[0;32mI (135) esp_image: segment 5: paddr=00040544 vaddr=50000000 size=00024h (    36) load[0m
+[0;32mI (141) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (141) boot: Disabling RNG early entropy source...[0m
+[0;32mI (153) cpu_start: Multicore app[0m
+[0;32mI (161) cpu_start: GPIO 44 and 43 are used as console UART I/O pins[0m
+[0;32mI (162) cpu_start: Pro cpu start user code[0m
+[0;32mI (162) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (164) app_init: Application information:[0m
+[0;32mI (168) app_init: Project name:     soleac_mems_test[0m
+[0;32mI (172) app_init: App version:      1[0m
+[0;32mI (176) app_init: Compile time:     Nov 10 2026 16:54:21[0m
+[0;32mI (181) app_init: ELF file SHA256:  e49133464...[0m
+[0;32mI (185) app_init: ESP-IDF:          v6.0.2[0m
+[0;32mI (189) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (193) efuse_init: Max chip rev:     v0.99 [0m
+[0;32mI (197) efuse_init: Chip rev:         v0.2[0m
+[0;32mI (200) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (207) heap_init: At 3FC971C0 len 00052550 (329 KiB): RAM[0m
+[0;32mI (212) heap_init: At 3FCE9710 len 00005724 (21 KiB): RAM[0m
+[0;32mI (217) heap_init: At 3FCF0000 len 00008000 (32 KiB): DRAM[0m
+[0;32mI (222) heap_init: At 600FE000 len 00001FE8 (7 KiB): RTCRAM[0m
+[0;32mI (229) spi_flash: detected chip: generic[0m
+[0;32mI (231) spi_flash: flash io: dio[0m
+[0;33mW (234) spi_flash: Detected size(16384k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;32mI (247) sleep_gpio: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (253) sleep_gpio: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (260) main_task: Started on CPU0[0m
+[0;32mI (260) main_task: Calling app_main()[0m
+[0;32mI (270) MEMS_TEST: SPH0641 PDM: CLK=GPIO42 DATA=GPIO41 SELECT=GND/LEFT[0m
+[0;32mI (270) MEMS_TEST: Reloj PDM=3072000 Hz; PCM=192000 Hz; tono de prueba Goertzel=1 kHz[0m
+[0;32mI (280) MEMS_TEST: Deja el MEMS en silencio 3 s; luego acerca una fuente de tono de 1 kHz.[0m
+[0;32mI (790) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (1290) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (1790) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (2290) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (2790) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (3290) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (3790) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (4290) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (4790) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (5290) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (5790) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (6290) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (6790) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (7290) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (7790) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (8290) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (8790) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (9290) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (9790) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (10290) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (10790) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (11290) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (11790) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (12290) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (12790) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (13290) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (13790) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (14290) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (14790) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (15290) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (15790) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (16290) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (16790) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (17290) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (17790) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (18290) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (18790) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (19290) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (19790) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (20290) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (20790) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (21290) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (21790) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (22290) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (22790) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (23290) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (23790) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (24290) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (280) MEMS_TEST: Deja el MEMS en silencio 3 s; luego acerca unI (840) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (1340) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (1840) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (2340) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (2840) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (3340) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (3840) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (4340) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (4840) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (5340) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (5840) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (6340) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (6840) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (7340) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (7840) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (8340) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (8840) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (9340) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (9840) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (10340) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (10840) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (11340) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (11840) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (12340) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (12840) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (13340) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (13840) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (14340) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (14840) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (15340) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (15840) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (16340) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (16840) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (17340) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (17840) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (18340) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (18840) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (19340) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (19840) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (20340) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (20840) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (21340) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (21840) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (22340) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (22840) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (23340) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (23840) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (24340) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (24840) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (25340) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (25840) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (26340) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (26840) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (27340) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (27840) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (28340) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (28840) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (29340) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (29840) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (30340) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (30840) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (31340) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (31840) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (32340) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (32840) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (33340) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (33840) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (34340) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (34840) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (35340) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (35840) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (36340) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (36840) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (37340) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (37840) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (38340) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (38840) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (39340) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (39840) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (40340) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (40840) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (41340) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (41840) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (42340) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (42840) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (43340) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (43840) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (44340) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (44840) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (45340) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (45840) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (46340) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (46840) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (47340) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (47840) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (48340) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (48840) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (49340) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (49840) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (50340) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (50840) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (51340) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (51840) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (52340) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (52840) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (53340) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (53840) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (54340) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (54840) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (55340) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (55840) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (56340) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (56840) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (57340) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (57840) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (280) MEMS_TEST: Deja el MEMS en silencio 3 s; luego acerca unI (840) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (1340) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (1840) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (2340) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (2840) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (3340) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (3840) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (280) MEMS_TEST: Deja el MEMS en silencio 3 s; luego acerca unI (1340) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (1840) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (2340) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (2840) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (3340) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (3840) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (4340) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (4840) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (5340) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (5840) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (6340) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (6840) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (7340) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (7840) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (8340) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (8840) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (9340) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (9840) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (10340) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (10840) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (11340) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (11840) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (12340) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (12840) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (13340) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (13840) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (14340) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (14840) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (15340) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (15840) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (16340) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (16840) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (17340) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (17840) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (18340) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (18840) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (19340) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (19840) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (20340) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (20840) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (21340) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (21840) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (22340) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (22840) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (23340) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (23840) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (24340) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (24840) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (25340) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (25840) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (26340) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (26840) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (27340) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (27840) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (28340) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (28840) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (29340) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (29840) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (30340) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (30840) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (31340) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (31840) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (32340) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (32840) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (33340) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (33840) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (34340) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (34840) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (35340) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (35840) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (36340) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (36840) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (37340) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (37840) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (38340) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (38840) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (39340) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (39840) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (40340) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (40840) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (41340) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (41840) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (42340) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (42840) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (43340) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (43840) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (44340) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (44840) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (45340) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (45840) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (46340) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (46840) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (47340) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (47840) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (48340) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (48840) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (49340) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (800) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (1300) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (1800) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (2300) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (2800) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (3300) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (3800) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (4300) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (4800) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (5300) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (5800) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (6300) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (6800) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (7300) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (7800) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (8300) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (8800) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (9300) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (9800) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (10300) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (10800) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (11300) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (11800) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (12300) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (12800) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (13300) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (13800) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (14300) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (14800) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (15300) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (15800) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (16300) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (16800) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (17300) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (17800) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (18300) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (18800) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (19300) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (19800) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (20300) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (20800) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (21300) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (21800) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (22300) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (22800) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (23300) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (23800) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (24300) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (24800) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (25300) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (25800) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (26300) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (26800) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (27300) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (27800) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (28300) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (28800) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (29300) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (29800) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (30300) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (30800) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (31300) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (31800) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (32300) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (32800) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (33300) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (33800) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (34300) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (34800) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (35300) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (35800) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (36300) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (36800) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (37300) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (37800) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (38300) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (38800) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (39300) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (39800) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (40300) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (40800) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (41300) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (41800) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (42300) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (42800) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (43300) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (43800) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (44300) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (44800) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (45300) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (45800) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (46300) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (46800) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (47300) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (47800) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (48300) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (48800) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (49300) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (49800) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (50300) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (50800) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (51300) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (51800) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (52300) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (52800) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (53300) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (53800) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (54300) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (54800) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (55300) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (55800) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (56300) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (56800) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (57300) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (57800) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (58300) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (58800) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (59300) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (59800) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (60300) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (60800) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (61300) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (61800) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (62300) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (62800) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (63300) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (63800) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (64300) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (64800) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (65300) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (65800) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (66300) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (66800) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (67300) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (67800) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (68300) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (68800) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (69300) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (69800) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (70300) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (70800) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (71300) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (71800) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (72300) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (72800) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (73300) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (73800) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (74300) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (74800) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (75300) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (75800) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (76300) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (76800) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (77300) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (77800) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (78300) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (78800) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (79300) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (79800) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (80300) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (80800) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (81300) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (81800) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (82300) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (82800) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (83300) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (83800) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (84300) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m
+[0;32mI (84800) MEMS_TEST: captura=OK unos=0.0% RMS=0.0 tono_1k=0.0 tono_40k=0.0 errores=0[0m

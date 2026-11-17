@@ -1,0 +1,5 @@
+-mlongcalls
+-fno-builtin-memcpy
+-fno-builtin-memset
+-fno-builtin-bzero
+"-specs=/home/julian/Downloads/Soleac/SOLEAC/mems_test/build/specs/picolibc.specs"
