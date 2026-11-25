@@ -60,12 +60,13 @@
   <li>MURATA MA40S4R</li>
   <li>Sensor de gas MQ-9</li></em>
 </body>
+    <hr>
     <h2><strong>Banner Soleac</strong></h2>
-<img src="<img width="1230" height="1600" alt="soleacbanner" src="https://github.com/user-attachments/assets/62839fc7-e8f5-4442-9dac-8c739a56ec54" />" alt="Soleac" width="300" />
+<img src=<img width="1230" height="1600" alt="soleacbanner" src="https://github.com/user-attachments/assets/35817b53-a63f-4548-8880-bb1907322dcc" />
+ />
 <hr>
 <body>
-<hr>
-<body>
+    <hr>
     <h2><strong>Integrantes</strong></h2>
   <em><li>Rea Vera Jhonatan</li>
   <li>Solis Tobias</li>
