@@ -37,7 +37,6 @@
   <li>Propano</li>
   <li>Metano</li>
   <li>Monóxido de carbono</li>
-    <li>butano</li>
 </ul>
 <b>Si quisieras captar aire comprimido con este sensor, por ejemplo, no sirve y tendrias que usar los sensores de frecuencia.</b></em>
 <hr>
