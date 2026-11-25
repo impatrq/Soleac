@@ -60,6 +60,10 @@
   <li>MURATA MA40S4R</li>
   <li>Sensor de gas MQ-9</li></em>
 </body>
+    <h2><strong>Banner Soleac</strong></h2>
+<img src="<img width="1230" height="1600" alt="soleacbanner" src="https://github.com/user-attachments/assets/62839fc7-e8f5-4442-9dac-8c739a56ec54" />" alt="Soleac" width="300" />
+<hr>
+<body>
 <hr>
 <body>
     <h2><strong>Integrantes</strong></h2>
