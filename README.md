@@ -67,7 +67,7 @@
     <li>Paolo Valentino</li></em>
 </body>
 <hr>
-<img src="assets/integrantes soleac.png" width="750" />
+<img src="assets/integrantes " width="750" />
 <hr>
 <body>
 <h3><strong>Contacto</strong></h3>

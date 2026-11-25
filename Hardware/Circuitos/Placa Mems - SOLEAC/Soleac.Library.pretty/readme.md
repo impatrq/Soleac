@@ -1,1 +1,0 @@
--`Sin título.kicad_mod` librerias de kicad para la placa MEMS.
