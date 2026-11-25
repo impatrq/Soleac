@@ -60,8 +60,11 @@
   <li>MURATA MA40S4R</li>
   <li>Sensor de gas MQ-9</li></em>
 </body>
-<hr>
+    <hr>
+    <h2><strong>Banner Soleac</strong></h2>
+<img width="1230" height="1600" alt="soleacbanner" src="https://github.com/user-attachments/assets/23e58101-4ad7-483b-86e4-c10893de8754" >
 <body>
+    <hr>
     <h2><strong>Integrantes</strong></h2>
   <em><li>Rea Vera Jhonatan</li>
   <li>Solis Tobias</li>
@@ -70,7 +73,7 @@
     <li>Paolo Valentino</li></em>
 </body>
 <hr>
-<img src="assets/integrantes soleac.jpeg" width="600" />
+<img width="1600" height="1200" alt="image" src="https://github.com/user-attachments/assets/600995f2-42ec-4d3c-b7e0-d159197d17d3" />
 <hr>
 <body>
 <h3><strong>Contacto</strong></h3>
