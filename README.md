@@ -17,10 +17,14 @@
 📍 Representando a la <b>E.E.S.T. N°7 “Taller Regional Quilmes”</b>, Buenos Aires, Argentina
 </body>
   <h2><strong>Organizacion de archivos</strong></h2>
-<em><li><b>Carpeta de campo</b>/Progreso y documentacion </li>
+<em>
+<li><b>.vscode</b>/Soleac Build </li>
+<li><b>Carpeta de campo</b>/Progreso y documentacion </li>
 <li><b>Diseño 3D</b>/Diseños fisicos de herraminetas</li>
 <li><b>Firmware</b>/Codigos implementados a los microcontroladores</li>
-<li><b>Hardware</b></Esquematicos y PCBs</li>
+<li><b>Hardware</b>/Esquematicos y PCBs</li>
+<li><b>Testing</b>/Verificación de funcionamiento</li>
+<li><b>app-movil</b>/Aplicación Soleac</li>
 <li><b>Assets</b>/Logotipos, README lockup</li></em>
 <hr>
 <body>
