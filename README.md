@@ -62,7 +62,7 @@
 </body>
     <hr>
     <h2><strong>Banner Soleac</strong></h2>
-<img src=<img width="1230" height="1600" alt="soleacbanner" src="https://github.com/user-attachments/assets/35817b53-a63f-4548-8880-bb1907322dcc" />
+<img width="1230" height="1600" alt="soleacbanner" src="https://github.com/user-attachments/assets/23e58101-4ad7-483b-86e4-c10893de8754" />
  />
 <hr>
 <body>
