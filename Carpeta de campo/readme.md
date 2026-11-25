@@ -1,3 +1,5 @@
 - `Anteproyecto` Dentro de esta carpeta se encuentra el anteproyecto.
+- `Docs` En esta carpeta se encuentra el manual de usuario y el informe final.
 - `Medidas_Antena` Medidas y formulas calculadas para las medidas de la antena.
-- `Pagina web` En esta carpeta se encuentra el codigo que se utiliza para la pagina oficial de Soleac
+- `ONIET` En esta carpeta se encuentra la carpeta de campo y el informe descriptivo.
+- `Pagina web` En esta carpeta se encuentra el codigo que se utiliza para la pagina oficial de Soleac.
